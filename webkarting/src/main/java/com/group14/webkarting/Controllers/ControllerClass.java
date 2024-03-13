@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ControllerClass {
 
     @GetMapping("/")
-    public String getMethodName(Model model) {
-        model.addAttribute("juanjo", new String("juanjo"));
+    public String si(Model model) {
+
         return "index";
     }
     
