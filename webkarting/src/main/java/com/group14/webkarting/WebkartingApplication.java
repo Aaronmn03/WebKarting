@@ -9,5 +9,4 @@ public class WebkartingApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(WebkartingApplication.class, args);
 	}
-
 }
