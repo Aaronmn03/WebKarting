@@ -83,11 +83,14 @@ function submitPress(event){
         "numUsers" : numPlayers,
         "date_hour" : dateValue,
         "listUsers" : valuesUsers.map(user => {
-            return {
+            const userData = {
                 "dni" : user[2],
                 "nombre": user[0],
-                "apellidos": user[1]
+                "apellidos": user[1],
+                "correo" : user[3],
+                "telefono" : user[4],
             };
+            return userData
         })
     };
     console.log(data);

@@ -7,12 +7,14 @@ public class Reserva {
 
     private int numUsers;
     private LocalDateTime date_hour;
-    private List<Cliente> listUsers;
+    private Representante representant;
+    private List<Persona> listUsers;
     public Reserva(){}
 
-    public Reserva(int n, LocalDateTime F_H, List<Cliente> list){
+    public Reserva(int n, LocalDateTime F_H, Representante representant,List<Persona> list){
         numUsers = n;
         date_hour = F_H;
+        this.representant = representant;
         listUsers = list;
     }
 
@@ -41,13 +43,13 @@ public class Reserva {
 
 
 
-    public List<Cliente> getListUsers() {
+    public List<Persona> getListUsers() {
         return listUsers;
     }
 
 
 
-    public void setListUsers(List<Cliente> listUsers) {
+    public void setListUsers(List<Persona> listUsers) {
         this.listUsers = listUsers;
     }
 
