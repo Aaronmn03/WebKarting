@@ -65,11 +65,11 @@ function submitPress(event){
     const nPlayersInput = document.getElementById('numberPlayers');
     const numPlayers = nPlayersInput.value;
     const dateValue = document.getElementById('fecha').value;
-    const values = getValuesUsers(numPlayers);
+    const valuesUsers = getValuesUsers(numPlayers);
     for(let users = 1; users <= numPlayers; users++){
         if(users === 1){        
             const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegExp.test(values[0][3])) {
+            if (!emailRegExp.test(valuesUsers[0][3])) {
                 alert('Por favor ingresa un correo electrónico válido');
                 return;
             }   
@@ -77,11 +77,45 @@ function submitPress(event){
         //Here we will do the repected validations.
         //Hour
     }
+
+    
     const data = {
-        numberOfPlayers: numPlayers,
-        date : dateValue,
-        users : values
-    }
+        "numUsers" : numPlayers,
+        "date_hour" : dateValue,
+        "listUsers" : valuesUsers.map(user => {
+            return {
+                "dni" : user[2],
+                "nombre": user[0],
+                "apellidos": user[1]
+            };
+        })
+    };
+    console.log(data);
+    const URL_BACKEND = 'http://127.0.0.1:8080';
+    
+    const url = URL_BACKEND + '/Reserve'; // URL EndPoint backend
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    };
+    console.log(JSON.stringify(data));
+
+    fetch(url, options)
+    .then(response => {
+        if (!response.ok) {     //This check if the server is connected OK
+            throw new Error('Error al enviar los datos al servidor');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Respuesta del servidor:', data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 
 }
 
