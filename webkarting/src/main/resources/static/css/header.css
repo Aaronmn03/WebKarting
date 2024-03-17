@@ -5,3 +5,7 @@
 .text-white{
     color: rgb(255, 255, 255);
 }
+.round-border{
+    border-width: 3px;
+    border-radius: 15px;
+}
