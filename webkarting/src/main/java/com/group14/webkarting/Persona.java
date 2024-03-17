@@ -7,7 +7,7 @@ public class Persona {
     private String nombre;
     private String apellidos;
 
-    @Entity
+    //@Entity
     public Persona(DNI dni, String nombre, String apellidos){
         this.dni = dni;
         this.nombre = nombre;
