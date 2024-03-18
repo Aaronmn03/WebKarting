@@ -1,9 +1,9 @@
 package com.group14.webkarting.utils;
 
-public class Telefono {
+public class Phone {
     private int telefono;
 
-    public Telefono(int telefono) {
+    public Phone(int telefono) {
         if(Integer.toString(telefono).length() != 9){
             throw new IllegalArgumentException("El numero introducido no existe");
         }
@@ -32,7 +32,7 @@ public class Telefono {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Telefono other = (Telefono) obj;
+        Phone other = (Phone) obj;
         if (telefono != other.telefono)
             return false;
         return true;

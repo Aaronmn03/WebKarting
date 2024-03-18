@@ -3,10 +3,10 @@ package com.group14.webkarting.utils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Correo {
+public class Mail {
     private String correo;
 
-    public Correo(String correo) {
+    public Mail(String correo) {
         if(!checkCorrectCorreo(correo)){
             throw new IllegalArgumentException("El correo introducido no es correcto");
         }

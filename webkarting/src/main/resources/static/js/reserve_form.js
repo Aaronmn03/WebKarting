@@ -46,7 +46,6 @@ function generarCamposUsuarios(cantidad) {
     }
 }
 
-// Escuchar cambios en el select
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('numberPlayers').addEventListener('change', getNumberPlayersSelect)
 });
@@ -65,6 +64,7 @@ function submitPress(event){
     const nPlayersInput = document.getElementById('numberPlayers');
     const numPlayers = nPlayersInput.value;
     const dateValue = document.getElementById('fecha').value;
+    const representant = getValues(1);
     const valuesUsers = getValuesUsers(numPlayers);
     for(let users = 1; users <= numPlayers; users++){
         if(users === 1){        
@@ -78,22 +78,29 @@ function submitPress(event){
         //Hour
     }
 
+
     
     const data = {
         "numUsers" : numPlayers,
         "date_hour" : dateValue,
+        "representant" : {
+            "dni" : representant[2],
+            "nombre": representant[0],
+            "apellidos": representant[1],
+            "correo" : representant[3],
+            "telefono" : representant[4],
+        },
         "listUsers" : valuesUsers.map(user => {
             const userData = {
                 "dni" : user[2],
                 "nombre": user[0],
                 "apellidos": user[1],
-                "correo" : user[3],
-                "telefono" : user[4],
             };
             return userData
         })
     };
     console.log(data);
+    
     const URL_BACKEND = 'http://127.0.0.1:8080';
     
     const url = URL_BACKEND + '/Reserve'; // URL EndPoint backend

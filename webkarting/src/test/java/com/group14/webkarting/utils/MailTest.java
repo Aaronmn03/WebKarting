@@ -5,12 +5,12 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 
-public class CorreoTest {
+public class MailTest {
     
     @Test
     public void correoCorrect(){
         final String correoCadena = "dljksdflk@gmail.com";
-        Correo correo = new Correo(correoCadena);
+        Mail correo = new Mail(correoCadena);
         assertTrue(correo.getCorreo() == correoCadena);
     }
 
@@ -18,7 +18,7 @@ public class CorreoTest {
     public void telefonoInCorrect(){
         final String correoCadena = "dljksdflkgmail.com";
         try {
-            Correo correo = new Correo(correoCadena);
+            Mail correo = new Mail(correoCadena);
             fail("Se esperaba que lanzara una excepción IllegalArgumentException");
         } catch (IllegalArgumentException e) {
             assertTrue(e.getMessage().equals("El correo introducido no es correcto"));

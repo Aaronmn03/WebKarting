@@ -5,12 +5,12 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 
-class TelefonoTest {
+class PhoneTest {
 
     @Test
     public void telefonoCorrect(){
         final int num = 965842315;
-        Telefono tlf = new Telefono(num);
+        Phone tlf = new Phone(num);
         assertTrue(tlf.getTelefono() == num);
     }
 
@@ -18,7 +18,7 @@ class TelefonoTest {
     public void telefonoInCorrect(){
         final int num = 96584231;
         try {
-            Telefono tlf = new Telefono(num);
+            Phone tlf = new Phone(num);
             fail("Se esperaba que lanzara una excepción IllegalArgumentException");
         } catch (IllegalArgumentException e) {
             assertTrue(e.getMessage().equals("El numero introducido no existe"));

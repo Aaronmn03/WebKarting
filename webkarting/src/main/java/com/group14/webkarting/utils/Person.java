@@ -1,14 +1,12 @@
-package com.group14.webkarting;
+package com.group14.webkarting.utils;
 
-import com.group14.webkarting.utils.DNI;
-
-public class Persona {
+public class Person {
     private DNI dni;
     private String nombre;
     private String apellidos;
 
     //@Entity
-    public Persona(DNI dni, String nombre, String apellidos){
+    public Person(DNI dni, String nombre, String apellidos){
         this.dni = dni;
         this.nombre = nombre;
         this.apellidos = apellidos;

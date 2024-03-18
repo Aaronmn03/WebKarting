@@ -1,23 +1,34 @@
-package com.group14.webkarting;
+package com.group14.webkarting.Models;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class Reserva {
+import com.group14.webkarting.utils.Person;
+import com.group14.webkarting.utils.Representant;
 
+public class Reserve {
+    private Long id;
     private int numUsers;
     private LocalDateTime date_hour;
-    private Representante representant;
-    private List<Persona> listUsers;
-    public Reserva(){}
+    private Representant representant;
+    private List<Person> listUsers;
+    public Reserve(){}
 
-    public Reserva(int n, LocalDateTime F_H, Representante representant,List<Persona> list){
+    public Reserve(int n, LocalDateTime F_H, Representant representant,List<Person> list){
         numUsers = n;
         date_hour = F_H;
         this.representant = representant;
         listUsers = list;
     }
 
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public int getNumUsers() {
         return numUsers;
@@ -43,13 +54,13 @@ public class Reserva {
 
 
 
-    public List<Persona> getListUsers() {
+    public List<Person> getListUsers() {
         return listUsers;
     }
 
 
 
-    public void setListUsers(List<Persona> listUsers) {
+    public void setListUsers(List<Person> listUsers) {
         this.listUsers = listUsers;
     }
 
@@ -58,6 +69,14 @@ public class Reserva {
     @Override
     public String toString() {
         return "Reserva [numUsers=" + numUsers + ", date_hour=" + date_hour + ", listUsers=" + listUsers + "]";
+    }
+
+    public Representant getRepresentant() {
+        return representant;
+    }
+
+    public void setRepresentant(Representant representant) {
+        this.representant = representant;
     }
 
     
