@@ -8,20 +8,20 @@ import org.junit.jupiter.api.Test;
 public class MailTest {
     
     @Test
-    public void correoCorrect(){
-        final String correoCadena = "dljksdflk@gmail.com";
+    public void mailCorrect(){
+        final String correoCadena = "aaron.mn03@gmail.com";
         Mail correo = new Mail(correoCadena);
-        assertTrue(correo.getCorreo() == correoCadena);
+        assertTrue(correo.getMail() == correoCadena);
     }
 
     @Test
-    public void telefonoInCorrect(){
+    public void mailIncorrect(){
         final String correoCadena = "dljksdflkgmail.com";
         try {
-            Mail correo = new Mail(correoCadena);
+            new Mail(correoCadena);
             fail("Se esperaba que lanzara una excepción IllegalArgumentException");
         } catch (IllegalArgumentException e) {
-            assertTrue(e.getMessage().equals("El correo introducido no es correcto"));
+            assertTrue(e.getMessage().equals("El mail introducido no es correcto"));
         }
     }
 }

@@ -6,16 +6,16 @@ public class DNI {
 
     public DNI(String dni){
         String num = dni.substring(0,dni.length() - 1);
-        char letraDNI = dni.charAt(dni.length() - 1);
+        char dniLetter = dni.charAt(dni.length() - 1);
         
         if(num.length() != 8){
-            throw new IllegalArgumentException("El numero de numeros del DNI es incorrecto");
+            throw new IllegalArgumentException("The number of numbers on the DNI is incorrect");
         }
-        if(!checkLetterDNI(num,letraDNI)){
-            throw new IllegalArgumentException("El DNI inscrito no existe");
+        if(!checkLetterDNI(num,dniLetter)){
+            throw new IllegalArgumentException("The registered DNI does not exist");
         }
         this.number = num;
-        this.letter = letraDNI;
+        this.letter = dniLetter;
     }
 
     public String getNumber(){
@@ -26,10 +26,10 @@ public class DNI {
         return letter;
     }
     public boolean checkLetterDNI(String number, char letter){
-        char[] letrasDNI = {'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'};
+        char[] dniLetters = {'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'};
         int num = Integer.parseInt(number);
-        int resto = num % 23;
-        return letrasDNI[resto] == letter;
+        int rest = num % 23;
+        return dniLetters[rest] == letter;
     }
 
     public String toString(){

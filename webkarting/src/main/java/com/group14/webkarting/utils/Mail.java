@@ -4,27 +4,27 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Mail {
-    private String correo;
+    private String mail;
 
-    public Mail(String correo) {
-        if(!checkCorrectCorreo(correo)){
-            throw new IllegalArgumentException("El correo introducido no es correcto");
+    public Mail(String mail) {
+        if(!checkCorrectMail(mail)){
+            throw new IllegalArgumentException("El mail introducido no es correcto");
         }
-        this.correo = correo;
+        this.mail = mail;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getMail() {
+        return mail;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 
-    private boolean checkCorrectCorreo(String correo){
+    private boolean checkCorrectMail(String mail){
         String regex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
         Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(correo);
+        Matcher matcher = pattern.matcher(mail);
         return matcher.matches();
     }
 }

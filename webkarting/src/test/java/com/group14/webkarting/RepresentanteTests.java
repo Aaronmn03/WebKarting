@@ -14,6 +14,6 @@ public class RepresentanteTests {
     @Test
     public void genRepresentantText(){
         Representant res = new Representant(new DNI("12345678Z"), "Perez", "Gonzalez",new Mail("dljksdflk@gmail.com"),new Phone(965842315));
-        assertEquals("Gonzalez", res.getApellidos());
+        assertEquals("Gonzalez", res.getSurname());
     }
 }

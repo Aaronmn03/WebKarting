@@ -1,27 +1,27 @@
 package com.group14.webkarting.utils;
 
 public class Phone {
-    private int telefono;
+    private int phone;
 
-    public Phone(int telefono) {
-        if(Integer.toString(telefono).length() != 9){
+    public Phone(int phone) {
+        if(Integer.toString(phone).length() != 9){
             throw new IllegalArgumentException("El numero introducido no existe");
         }
         
-        this.telefono = telefono;
+        this.phone = phone;
     }
 
-    public int getTelefono() {
-        return telefono;
+    public int getPhone() {
+        return phone;
     }
 
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
+    public void setPhone(int phone) {
+        this.phone = phone;
     }
 
     @Override
     public String toString() {
-        return Integer.toString(telefono);
+        return Integer.toString(phone);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class Phone {
         if (getClass() != obj.getClass())
             return false;
         Phone other = (Phone) obj;
-        if (telefono != other.telefono)
+        if (phone != other.phone)
             return false;
         return true;
     }

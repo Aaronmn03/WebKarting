@@ -2,14 +2,14 @@ package com.group14.webkarting.utils;
 
 public class Person {
     private DNI dni;
-    private String nombre;
-    private String apellidos;
+    private String name;
+    private String surname;
 
     //@Entity
-    public Person(DNI dni, String nombre, String apellidos){
+    public Person(DNI dni, String name, String surname){
         this.dni = dni;
-        this.nombre = nombre;
-        this.apellidos = apellidos;
+        this.name = name;
+        this.surname = surname;
     }
 
     public DNI getDni() {
@@ -20,20 +20,20 @@ public class Person {
         this.dni = dni;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getApellidos() {
-        return apellidos;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
     
 

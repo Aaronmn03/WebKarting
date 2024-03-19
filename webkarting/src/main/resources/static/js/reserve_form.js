@@ -59,23 +59,46 @@ function getNumberPlayersSelect(){
     }
 }
 
+
+function checkDNI(dni){
+    var dniRegex = /^[0-9]{8}[a-zA-Z]$/;
+    
+    if (dniRegex.test(dni)) {
+        var numbers = dni.slice(0, -1);
+        var letter = dni.slice(-1).toUpperCase();
+        var index = parseInt(numbers) % 23;
+        var letters = 'TRWAGMYFPDXBNJZSQVHLCKE';
+        
+        if (letter === letters.charAt(index)) {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
+}
+
 function submitPress(event){
     event.preventDefault();
     const nPlayersInput = document.getElementById('numberPlayers');
     const numPlayers = nPlayersInput.value;
-    const dateValue = document.getElementById('fecha').value;
+    const dateValue = document.getElementById('date').value;
     const representant = getValues(1);
     const valuesUsers = getValuesUsers(numPlayers);
     for(let users = 1; users <= numPlayers; users++){
+        if(!checkDNI(valuesUsers[users - 1][2])){
+            alert('Por favor ingresa un DNI válido');
+            return;
+        }
         if(users === 1){        
             const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegExp.test(valuesUsers[0][3])) {
-                alert('Por favor ingresa un correo electrónico válido');
+                alert('Por favor ingresa un mail electrónico válido' + valuesUsers[0][3]);
                 return;
             }   
         }
         //Here we will do the repected validations.
-        //Hour
     }
 
 
@@ -85,16 +108,16 @@ function submitPress(event){
         "date_hour" : dateValue,
         "representant" : {
             "dni" : representant[2],
-            "nombre": representant[0],
-            "apellidos": representant[1],
-            "correo" : representant[3],
-            "telefono" : representant[4],
+            "name": representant[0],
+            "surname": representant[1],
+            "mail" : representant[3],
+            "phone" : representant[4],
         },
         "listUsers" : valuesUsers.map(user => {
             const userData = {
                 "dni" : user[2],
-                "nombre": user[0],
-                "apellidos": user[1],
+                "name": user[0],
+                "surname": user[1],
             };
             return userData
         })
@@ -103,7 +126,7 @@ function submitPress(event){
     
     const URL_BACKEND = 'http://127.0.0.1:8080';
     
-    const url = URL_BACKEND + '/Reserve'; // URL EndPoint backend
+    const url = URL_BACKEND + '/Reserve/'; // URL EndPoint backend
     const options = {
         method: 'POST',
         headers: {

@@ -68,7 +68,7 @@ public class Reserve {
 
     @Override
     public String toString() {
-        return "Reserva [numUsers=" + numUsers + ", date_hour=" + date_hour + ", listUsers=" + listUsers + "]";
+        return "Reserve [numUsers=" + numUsers + ", date_hour=" + date_hour + ", listUsers=" + listUsers + "]";
     }
 
     public Representant getRepresentant() {

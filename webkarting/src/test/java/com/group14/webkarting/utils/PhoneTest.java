@@ -8,17 +8,17 @@ import org.junit.jupiter.api.Test;
 class PhoneTest {
 
     @Test
-    public void telefonoCorrect(){
+    public void phoneCorrect(){
         final int num = 965842315;
         Phone tlf = new Phone(num);
-        assertTrue(tlf.getTelefono() == num);
+        assertTrue(tlf.getPhone() == num);
     }
 
     @Test
-    public void telefonoInCorrect(){
+    public void phoneIncorrect(){
         final int num = 96584231;
         try {
-            Phone tlf = new Phone(num);
+            new Phone(num);
             fail("Se esperaba que lanzara una excepción IllegalArgumentException");
         } catch (IllegalArgumentException e) {
             assertTrue(e.getMessage().equals("El numero introducido no existe"));

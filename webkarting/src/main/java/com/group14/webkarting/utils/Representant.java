@@ -2,29 +2,29 @@ package com.group14.webkarting.utils;
 
 public class Representant extends Person{
 
-    private Mail correo;
-    private Phone telefono;
+    private Mail mail;
+    private Phone phone;
 
-    public Representant(DNI dni, String nombre, String apellidos,Mail correo, Phone telefono){
-        super(dni, nombre, apellidos);
-        this.correo = correo;
-        this.telefono = telefono;
+    public Representant(DNI dni, String name, String surname,Mail mail, Phone phone){
+        super(dni, name, surname);
+        this.mail = mail;
+        this.phone = phone;
     }
 
-    public String getCorreo() {
-        return correo.getCorreo();
+    public String getMail() {
+        return mail.getMail();
     }
 
-    public void setCorreo(Mail correo) {
-        this.correo = correo;
+    public void setMail(Mail mail) {
+        this.mail = mail;
     }
 
-    public int getTelefono() {
-        return telefono.getTelefono();
+    public int getPhone() {
+        return phone.getPhone();
     }
 
-    public void setTelefono(Phone telefono) {
-        this.telefono = telefono;
+    public void setPhone(Phone phone) {
+        this.phone = phone;
     }
     
     

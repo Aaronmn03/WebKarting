@@ -25,10 +25,10 @@ class DNITest {
     public void checkIncorrectLengthDNITest(){
         try {
             // Intenta crear una instancia de DNI con un número de DNI de longitud incorrecta
-            DNI dni = new DNI("123457A");
+            new DNI("123457A");
             fail("Se esperaba que lanzara una excepción IllegalArgumentException");
         } catch (IllegalArgumentException e) {
-            assertTrue(e.getMessage().equals("El numero de numeros del DNI es incorrecto"));
+            assertTrue(e.getMessage().equals("The number of numbers on the DNI is incorrect"));
         }
 
     }
@@ -37,10 +37,10 @@ class DNITest {
     public void checkIncorrectLetterDNITest(){
         try {
             // Intenta crear una instancia de DNI con un número de DNI de longitud incorrecta
-            DNI dni = new DNI("12345678Y");
+            new DNI("12345678Y");
             fail("Se esperaba que lanzara una excepción IllegalArgumentException");
         } catch (IllegalArgumentException e) {
-            assertTrue(e.getMessage().equals("El DNI inscrito no existe"));
+            assertTrue(e.getMessage().equals("The registered DNI does not exist"));
         }
     }
 }
