@@ -1,0 +1,18 @@
+{{>header}}
+<div class = "row" style="background-color: #e74451;">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 p-4 bg-danger">
+        <div class="row m-3 p-3 round-border " style="background-color: #a51c28;">
+            <p>Horario: {{reserve.date_hour}}</p>
+            <p>Representante: {{reserve.representant.name}} {{reserve.representant.surname}}, {{reserve.representant.dni}}, {{reserve.representant.phone}}, {{reserve.representant.mail}}</p>
+            {{#reserve.listUsers}}
+            <li>{{name}} {{surname}}, {{dni}}</li>
+            {{/reserve.listUsers}}
+        </div>
+    </div>
+    <button onclick = "window.location.href = '/Reserves/editReserve/{{id}}/'">Editar</button>
+    <div class="col-md-2"></div>
+</div>
+
+
+{{>footer}}

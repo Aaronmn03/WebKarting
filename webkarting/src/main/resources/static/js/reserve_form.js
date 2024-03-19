@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('numberPlayers').addEventListener('change', getNumberPlayersSelect)
 });
 
+
 function getNumberPlayersSelect(){
     const cantidadJugadores = parseInt(this.value);
     if (cantidadJugadores > 0) {
@@ -84,25 +85,32 @@ function submitPress(event){
     const nPlayersInput = document.getElementById('numberPlayers');
     const numPlayers = nPlayersInput.value;
     const dateValue = document.getElementById('date').value;
+
+    if(dateValue === ""){
+        alert('Por favor ingresa una fecha valida');
+        return;
+    }
+
     const representant = getValues(1);
     const valuesUsers = getValuesUsers(numPlayers);
     for(let users = 1; users <= numPlayers; users++){
         if(!checkDNI(valuesUsers[users - 1][2])){
-            alert('Por favor ingresa un DNI válido');
+            alert('Por favor ingresa un DNI valido');
             return;
         }
         if(users === 1){        
             const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegExp.test(valuesUsers[0][3])) {
-                alert('Por favor ingresa un mail electrónico válido' + valuesUsers[0][3]);
+                alert('Por favor ingresa un mail electrónico valido, ' + valuesUsers[0][3] + ' no es un correo valido');
                 return;
-            }   
+            } 
+            if(!checkPhone(valuesUsers[0][4])){
+                alert('Por favor ingresa un Telefono');
+                return;
+            }
         }
-        //Here we will do the repected validations.
     }
 
-
-    
     const data = {
         "numUsers" : numPlayers,
         "date_hour" : dateValue,
@@ -122,11 +130,10 @@ function submitPress(event){
             return userData
         })
     };
-    console.log(data);
     
     const URL_BACKEND = 'http://127.0.0.1:8080';
     
-    const url = URL_BACKEND + '/Reserve/'; // URL EndPoint backend
+    const url = URL_BACKEND + '/api/Reserve/'; // URL EndPoint backend
     const options = {
         method: 'POST',
         headers: {
@@ -134,7 +141,6 @@ function submitPress(event){
         },
         body: JSON.stringify(data)
     };
-    console.log(JSON.stringify(data));
 
     fetch(url, options)
     .then(response => {
@@ -150,6 +156,14 @@ function submitPress(event){
         console.error('Error:', error);
     });
 
+}
+
+function checkPhone(phone){
+    const phoneRegex = /^\d{9}$/;
+    if (phoneRegex.test(phone)) {
+        return true;
+    }
+    return false;
 }
 
 function getValuesUsers(nPlayers){
@@ -172,3 +186,4 @@ function getValues(user){
 
     return inputUser;
 }
+

@@ -23,7 +23,7 @@ import com.group14.webkarting.Models.Reserve;
 import com.group14.webkarting.Services.ReserveService;
 
 @RestController
-@RequestMapping("/Reserve")
+@RequestMapping("/api/Reserve")
 
 public class ReserveController {
     
