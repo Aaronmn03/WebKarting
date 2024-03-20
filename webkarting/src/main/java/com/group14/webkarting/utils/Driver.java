@@ -7,6 +7,7 @@ public class Driver extends Person{
     private Lap bestLap;
     private Lap midLap;
     private int nKart;
+    private float totalTime;
 
 
     public Driver(DNI dni, String name, String surname, List<Lap> listLaps,Lap bestLap, Lap midLap ,int nKart) {
@@ -15,6 +16,7 @@ public class Driver extends Person{
         this.nKart = nKart;
         this.bestLap = bestLap;
         this.midLap = midLap;
+        this.totalTime = getTotalTime(listLaps); 
     }
 
 
@@ -57,5 +59,23 @@ public class Driver extends Person{
         this.midLap = midLap;
     }
     
+    public float getTotalTime(List<Lap> listLaps){
+        float aux = 0;
+        for (Lap lap : listLaps) {
+            aux += lap.getTotalTime();
+        }
+        return aux;
+    }
+
+
+    public float getTotalTime() {
+        return totalTime;
+    }
+
+
+    public void setTotalTime(float totalTime) {
+        this.totalTime = totalTime;
+    }
+
     
 }

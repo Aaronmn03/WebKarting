@@ -1,2 +1,31 @@
 {{>header}}
+<div class = "row" style="background-color: #e74451;">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 p-4 bg-danger">
+      <form  id="fReserve" onsubmit="submitPress(event)" style="display: block;">
+        <div class="row p-3 round-border" style="background-color: #aa1a26;">
+          <div class="col-md-6">
+            <label for="numberDrivers" class="text-white">Numero de jugadores:</label>
+            <select id="numberDivers" class="form-select form-select ">
+              <option value="0" selected>Seleccionar cantidad de jugadores</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+          
+          <select id="numLaps" name="laps" class="col-md-6">
+            <option value="0" selected>Seleccionar cantidad de vueltas</option>
+            <option value="4">4</option>
+            <option value="7">7</option>
+            <option value="11">11</option>
+          </select>
+        </div>
+        <div id="containerDrivers" class="p-3 row"></div>
 {{>footer}}
