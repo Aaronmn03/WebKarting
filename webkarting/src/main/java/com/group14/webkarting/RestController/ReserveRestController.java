@@ -25,7 +25,7 @@ import com.group14.webkarting.Services.ReserveService;
 @RestController
 @RequestMapping("/api/Reserve")
 
-public class ReserveController {
+public class ReserveRestController {
     
     @Autowired
     private ReserveService reserves;
@@ -38,8 +38,6 @@ public class ReserveController {
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(reserve.getId()).toUri();
 
         return ResponseEntity.created(location).body(reserve);
-        
-
     }
 
     @GetMapping("/")

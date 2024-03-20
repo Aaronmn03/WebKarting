@@ -1,6 +1,5 @@
 package com.group14.webkarting.Controllers;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,11 +7,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.group14.webkarting.Models.Reserve;
 import com.group14.webkarting.Services.ReserveService;
 
 @Controller
-public class ControllerClass {
+public class ReserveController {
 
     @Autowired
     private ReserveService reserveService;
@@ -42,7 +40,13 @@ public class ControllerClass {
 
     @RequestMapping("/Reserves/editReserve/{id}/")
     public String editReserve(Model model,@PathVariable long id) {
-        //model.addAttribute("reserve", reserveService.findById(id));
+        model.addAttribute("reserve", reserveService.findById(id));
         return "edit_reserve";
+    }
+    @RequestMapping("/Reserves/removeReserve/{id}/")
+    public String deleteReserve(Model model,@PathVariable long id) {
+        reserveService.deleteById(id);
+        model.addAttribute("reserves", reserveService.findAll());
+        return "reserves";
     }
 }

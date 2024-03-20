@@ -187,3 +187,9 @@ function getValues(user){
     return inputUser;
 }
 
+function deleteReserve(){
+    if (confirm("¿Estas seguro de que quieres borrar esta reserva?")) {
+        window.location.href = '/Reserves/removeReserve/{{reserve.id}}/'
+    }
+}
+
