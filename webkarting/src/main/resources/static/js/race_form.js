@@ -8,7 +8,7 @@ function generarCamposDrivers(cantidad) {
         driverDiv.className = 'col-md-12';
         driverDiv.innerHTML = `
             <div class="row round-border mx-2 my-3 p-3" id="Usuario${i}" style="background-color: #aa1a26;">
-                <h3 class="text-white" style="text-align: center;">Usuario${i}</h3> 
+                <h3 class="text-white" style="text-align: center;">Corredor${i}</h3> 
                 <div class="col-md-6" style="text-align: center; font-size: 19px;">  
                     <div class="row py-3"><label for="name${i}" class="text-white">Nombre:</label></div>
                     <div class="row py-3"><label for="surname${i}" class="text-white">Apellidos:</label></div>
@@ -19,35 +19,43 @@ function generarCamposDrivers(cantidad) {
                     <div class="row py-3"><input id="surname${i}" type="text" style="max-width: 90%;" required></div>
                     <div class="row py-3"><input id="dni${i}" type="text" style="max-width: 90%;" required></div>
                 </div>
+                <div id="UsuarioLaps${i}" class="p-3 col-md-12"></div>
             </div>`;
-
-        contenedorUsuarios.appendChild(driverDiv);
+        contenedorUsuarios.appendChild(driverDiv);  
     }
+    getNumberLaps();
 }
 
 function generateContainerLaps(laps,idUser){
-    const contenedorLaps = document.getElementById('Usuario${i}');
+    const contenedorLaps = document.getElementById(`UsuarioLaps${idUser}`);
     contenedorLaps.innerHTML = '';
 
     for(let i = 1; i <= laps;i++){
-        const lapsDiv = document.createElement('div');
+        const lapDiv = document.createElement('div');
 
-        lapsDiv.className = 'col-md-12';
-        lapsDiv.innerHTML = `
-            <div class="row round-border mx-2 my-3 p-3" id="Lap${i}-${idUser}" style="background-color: #aa1a26;">
-             <h3 class="text-white" style="text-align: center;">Vuelta${i}$</h3> 
-             <div class="col-md-6" style="text-align: center; font-size: 19px;">  
-                <div class="row py-3"><label for="Sect1.${i}-${idUser}" class="text-white">Sector1:</label></div>
-                <div class="row py-3"><label for="Sect2.${i}-${idUser}" class="text-white">Sector2:</label></div>
-                <div class="row py-3"><label for="Sect3.${i}-${idUser}" class="text-white">Sector3:</label></div>
-            </div>   
-            <div class="col-md-6">  
-                <div class="row py-3"><input id="Sect1.${i}-${idUser}" type="text" style="max-width: 90%;" required></div>
-                <div class="row py-3"><input id="Sect2.${i}-${idUser}" type="text" style="max-width: 90%;" required></div>
-                <div class="row py-3"><input id="Sect3.${i}-${idUser}" type="text" style="max-width: 90%;" required></div>
+        lapDiv.className = 'row';
+        lapDiv.innerHTML = `
+        <div class="round-border mx-2 my-1 p-2" id="Lap${i}-${idUser}" style="background-color: #aa1a26;">
+        <h4 class="text-white" style="text-align: center;">Vuelta${i}</h4> 
+            <div class="row">
+                <div class="col-md-4" style="font-size: 14px;">  
+                    <label for="Sect1.${i}-${idUser}" class="text-white">Sector1:</label>
+                    <input id="Sect1.${i}-${idUser}" type="text" style="max-width: 90%;" required>
+                </div>
+                <div class="col-md-4" style="font-size: 14px;">  
+                    <label for="Sect2.${i}-${idUser}" class="text-white">Sector2:</label>
+                    <input id="Sect2.${i}-${idUser}" type="text" style="max-width: 90%;" required>
+                </div>
+                <div class="col-md-4" style="font-size: 14px;">  
+                    <label for="Sect3.${i}-${idUser}" class="text-white">Sector3:</label>
+                    <input id="Sect3.${i}-${idUser}" type="text" style="max-width: 90%;" required>
+                </div>
             </div>
-        `;
+    </div>
+    
 
+        `;
+        contenedorLaps.appendChild(lapDiv);
     }
 }
 
@@ -66,14 +74,75 @@ function getNumberDriversSelected(){
 }
 
 function getNumberLaps(){
-    const cantidadLaps = parseInt(this.value);
+
     const numDrivers = document.getElementById('numberDivers').value;
-    if (cantidadLaps > 0) {
-        for(let i = 1; i <= numDrivers; i++){
-            generateContainerLaps(cantidadLaps,i);
+    const cantidadLaps = document.getElementById('numLaps').value;
+
+    for(let i = 1; i <= numDrivers; i++){
+        generateContainerLaps(cantidadLaps,i);
+    }   
+}
+
+function submitPressRace(event){
+    event.preventDefault();
+    const nDrivers = document.getElementById('numberDivers').value;
+    const nLaps = document.getElementById('numLaps').value;
+    let usersDatas = []
+    for(let i = 1; i<=nDrivers ; i++){
+        let lapsUser = [];
+        for(let j = 1; j<=nLaps ; j++){
+            lapsUser.push(new Lap(document.getElementById('Sect1.' + i +'-' + j).value,document.getElementById('Sect2.' + i +'-' + j).value,document.getElementById('Sect3.' + i +'-' + j).value));
         }
-        
-    } else {
-        document.getElementById('containerLaps').innerHTML = '';
+        usersDatas.push(new Usuario(document.getElementById('name' + i).value,document.getElementById('surname' + i).value,document.getElementById('dni' + i).value,lapsUser));
     }
+    
+    
+    const data = {
+        "numberLaps" : nLaps,
+        "listDrivers" : usersDatas
+    }
+
+    const URL_BACKEND = 'http://127.0.0.1:8080';
+    
+    const url = URL_BACKEND + '/api/Race/'; // URL EndPoint backend
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    };
+
+    console.log(options.body);
+
+    fetch(url, options)
+    .then(response => {
+        if (!response.ok) {     //This check if the server is connected OK
+            throw new Error('Error al enviar los datos al servidor');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Respuesta del servidor:', data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+function Usuario(name,surname,dni,listLaps){
+    this.name = name;
+    this.surname = surname;
+    this.dni = dni;
+    this.listLaps = listLaps;
+    for(let i = 0; i<  listLaps.length ; i++){
+        totalTime = listLaps[i].totalTime;
+    }
+}
+
+function Lap(sector1, sector2, sector3) {
+    this.timeSect1 = sector1;
+    this.timeSect2 = sector2;
+    this.timeSect3 = sector3;
+    this.totalTime = parseInt(sector1) + parseInt(sector2) + parseInt(sector3);
 }

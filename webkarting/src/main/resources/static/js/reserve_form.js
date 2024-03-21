@@ -80,7 +80,7 @@ function checkDNI(dni){
     }
 }
 
-function submitPress(event){
+function submitPressReserve(event){
     event.preventDefault();
     const nPlayersInput = document.getElementById('numberPlayers');
     const numPlayers = nPlayersInput.value;
