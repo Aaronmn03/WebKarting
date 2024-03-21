@@ -1,0 +1,18 @@
+{{>header}}
+<div class = "row" style="background-color: #e74451;">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 p-4 bg-danger">
+        {{driver.surname}},{{driver.name}}   ,{{driver.dni}}
+        Tiempo total: {{driver.totalTime}}   
+        <!--Tiempo medio por vuelta: 
+        Mejor vuelta:    We need to calculate this before-->
+        Vueltas: 
+        {{#driver.listLaps}}
+            Vuelta {{-index}}: 
+            <li>Sector1: {{timeSect1}}</li>
+            <li>Sector2: {{timeSect2}}</li>
+            <li>Sector3: {{timeSect3}}</li>
+            Tiempo de vuelta :{{totalTime}}
+        {{/driver.listLaps}}
+    </div>
+{{>footer}}

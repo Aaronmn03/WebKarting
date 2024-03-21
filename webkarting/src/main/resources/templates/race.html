@@ -1,0 +1,15 @@
+{{>header}}
+<div class = "row" style="background-color: #e74451;">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 p-4 bg-danger">
+        <div class="row m-3 p-3 round-border " style="background-color: #a51c28;">
+            Id: {{race.id}}  Numero de vueltas: {{race.numberLaps}}.
+            {{#race.listDrivers}}
+            <div class="row m-3 p-3 round-border " style="background-color: #5f141a;" onclick="window.location.href = '/Race/{{id}}/User/{{-index}}'"><!--We need to subtract 1 to index-->
+                Nombre: {{name}} Tiempo total: {{totalTime}}.
+                <!--MidLAP AND BEST LAP We need to calculate this before-->
+            </div>
+            {{/race.listDrivers}}
+            </div>
+    </div>
+{{>footer}}
