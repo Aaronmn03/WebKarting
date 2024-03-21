@@ -8,7 +8,7 @@ function generarCamposUsuarios(cantidad) {
         if(i == 1){
             usuarioDiv.className = 'col-md-12';
             usuarioDiv.innerHTML = `
-            <div class="row round-border mx-2 my-3 p-3" id="Usuario${i}" style="background-color: #aa1a26;">
+            <div class="row round-border mx-2 my-3 p-3" id="Usuario${i}" style="background-color: #282828;">
                 <h3 class="text-white" style="text-align: center;">Usuario${i} (Representante)</h3> 
                 <div class="col-md-6" style="text-align: center; font-size: 19px;">
                     <div class="row py-3"><label for="name${i}" class="text-white">Nombre:</label></div>
@@ -28,7 +28,7 @@ function generarCamposUsuarios(cantidad) {
         }else{
             usuarioDiv.className = 'col-md-6';
             usuarioDiv.innerHTML = `
-            <div class="row round-border mx-2 my-3 p-3" id="Usuario${i}" style="background-color: #aa1a26;">
+            <div class="row round-border mx-2 my-3 p-3" id="Usuario${i}" style="background-color: #282828;;">
                 <h3 class="text-white" style="text-align: center;">Usuario${i}</h3> 
                 <div class="col-md-6" style="text-align: center; font-size: 19px;">  
                     <div class="row py-3"><label for="name${i}" class="text-white">Nombre:</label></div>
@@ -188,7 +188,7 @@ function getValues(user){
 }
 
 function deleteReserve(){
-    if (confirm("¿Estas seguro de que quieres borrar esta reserva?")) {
+    if (confirm("¿Estás seguro de que quieres borrar esta reserva?")) {
         window.location.href = '/Reserves/removeReserve/{{reserve.id}}/'
     }
 }

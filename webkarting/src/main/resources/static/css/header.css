@@ -1,11 +1,32 @@
-#logo{
-    width: 12%; 
+/* Estilos para el logo */
+#logo {
+    width: 12%;
     height: auto;
 }
-.text-white{
+
+/* Estilo para el texto en blanco */
+.text-white {
     color: rgb(255, 255, 255);
 }
-.round-border{
+
+/* Estilo para bordes redondeados */
+.round-border {
     border-width: 3px;
     border-radius: 15px;
+}
+
+/* Estilo para el fondo */
+
+.fondo-seccion {
+    background-color: #ffffff;
+    background-image: url("../images/fondo.jpg");
+    background-size: 100% ;
+    background-repeat: repeat-y;
+}
+
+.header-seccion {
+    background-color: #ff0000;
+    background-image: url("../images/cuadros.png");
+    background-size: 100% ;
+    background-repeat: repeat-y;
 }

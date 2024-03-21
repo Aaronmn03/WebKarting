@@ -1,9 +1,9 @@
 {{>header}}
-<div class = "row" style="background-color: #e74451;">
+<div class = "row fondo-seccion">
     <div class="col-md-2"></div>
-    <div class="col-md-8 p-4 bg-danger">
+    <div class="col-md-8 p-4">
       <form  id="fReserve" onsubmit="submitPress(event)" style="display: block;">
-        <div class="row p-3 round-border" style="background-color: #aa1a26;">
+        <div class="row p-3 round-border" style="background-color: #282828;">
           <label for="numberPlayers" class="text-white">Numero de jugadores:</label>
           <div class="col-md-8">
             <select id="numberPlayers" class="form-select form-select ">
@@ -23,12 +23,12 @@
         </div>
         <div id="contenedorUsuarios" class="p-3 row"></div>
         <div class="text-center">
-          <button id="ReserveFormBtn" type="submit" class="btn btn-outline-light btn-lg" style="border-width: 3px;">Enviar</button>
+          <button id="ReserveFormBtn" type="submit" class="btn btn-outline-light btn-lg " style="border-width: 3px; background-color: #282828;">Enviar</button>
         </div>
 
       </form>
       </div>
-      <button onclick="window.location.href = '/Reserves/'" class="btn btn-outline-light btn-lg" style="border-width: 3px;">Ver reservas</button>
+      <button onclick="window.location.href = '/Reserves/'" class="btn btn-outline-light btn-lg" style="border-width: 3px; background-color: #282828">Ver reservas</button>
     </div>
   <div class="col-md-2"></div>
 {{>footer}}
