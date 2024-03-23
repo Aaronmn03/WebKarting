@@ -1,0 +1,147 @@
+[33mcommit 2c40d6a04e4b352c1c89f66d6d3596c1e9bef0fa[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 9376eff e4c515f
+Author: Juanjo2633 <juanjoguirao2633@gmail.com>
+Date:   Thu Mar 21 12:11:18 2024 +0100
+
+    Merge remote-tracking branch 'origin/main'
+    
+    # Conflicts:
+    #       webkarting/src/main/resources/templates/new_reserve.html
+
+[33mcommit 9376eff40b4da6281ac4dce71c80d1e3d11eb62c[m
+Author: Juanjo2633 <juanjoguirao2633@gmail.com>
+Date:   Thu Mar 21 12:09:13 2024 +0100
+
+    start of frontend change
+
+[33mcommit e4c515fe98026f6a04b404eb071fe6786ca9ef4f[m
+Author: Aaron <aaron.mn03@gmail.com>
+Date:   Thu Mar 21 12:02:49 2024 +0100
+
+    Race implemented
+
+[33mcommit 5f22d1ec5e3a02f8e92a4542ce6dc512c553348e[m
+Author: Aaron <aaron.mn03@gmail.com>
+Date:   Wed Mar 20 18:57:39 2024 +0100
+
+    form new race done
+
+[33mcommit 6bfa4d4dde2cbe3a43dd08f6fe739587b8089815[m
+Author: Aaron <aaron.mn03@gmail.com>
+Date:   Wed Mar 20 12:12:43 2024 +0100
+
+    backend races done
+
+[33mcommit d7eaceefeb659a8ae46b80fbc0feb541d9f68b2f[m
+Author: Aaron <aaron.mn03@gmail.com>
+Date:   Wed Mar 20 11:36:14 2024 +0100
+
+    ReservesDone
+
+[33mcommit 09f218b5fc585446484288c7760932ff5b703e8a[m
+Author: Aaron <aaron.mn03@gmail.com>
+Date:   Tue Mar 19 19:04:29 2024 +0100
+
+    show reserves added
+
+[33mcommit 1f8245a62d4fe5b6a8ebfda82bc203fcbf256218[m
+Author: Aaron <aaron.mn03@gmail.com>
+Date:   Tue Mar 19 10:25:58 2024 +0100
+
+    All in english
+
+[33mcommit df2ad4d18222333b2fdc75d1d3dd439483f2d836[m
+Author: Aaron <aaron.mn03@gmail.com>
+Date:   Mon Mar 18 23:12:09 2024 +0100
+
+    Mas operaciones añadidas a reserve
+
+[33mcommit 6720479d4ff815e92befe67924ed5238e8cd6c0f[m
+Author: Aaron <aaron.mn03@gmail.com>
+Date:   Sun Mar 17 23:38:23 2024 +0100
+
+    Falta el representante por guardar
+
+[33mcommit b8f8c75e108e89f463161b7dca2e83f521121a33[m
+Author: Aaron <aaron.mn03@gmail.com>
+Date:   Sun Mar 17 23:22:52 2024 +0100
+
+    funciona el almacenamiento por mapas
+
+[33mcommit 108b874bcfdc47082a9337706fccd4dd7676f3fa[m
+Author: Aaron <aaron.mn03@gmail.com>
+Date:   Sun Mar 17 11:30:14 2024 +0100
+
+    Lectura de datos de Reservas
+
+[33mcommit 4dd549ece2c7bf11c53db9e45ec5704893713303[m
+Author: Aaron <aaron.mn03@gmail.com>
+Date:   Sun Mar 17 03:15:40 2024 +0100
+
+    Formulario de las reservas hecho
+
+[33mcommit 1ca11de7034b3504f0d126bfb7491428e9ca02d0[m
+Author: Aaron <aaron.mn03@gmail.com>
+Date:   Fri Mar 15 12:02:23 2024 +0100
+
+    Hechos varias utils
+
+[33mcommit 9ff192953a20165c349bffe75a6989bdb86127c3[m
+Author: Aaron <aaron.mn03@gmail.com>
+Date:   Fri Mar 15 10:34:01 2024 +0100
+
+    Clase DNI hecha
+
+[33mcommit 9a6961826ccce274e387641e844c2d5b7ce83971[m
+Author: Aaron <aaron.mn03@gmail.com>
+Date:   Thu Mar 14 18:43:31 2024 +0100
+
+    Añadidas algunos articulos a home, y rates creado
+
+[33mcommit 70e1869cb97cdcbdeb502fd0162e9d11c6db93de[m
+Author: Aaron <aaron.mn03@gmail.com>
+Date:   Thu Mar 14 10:37:23 2024 +0100
+
+    empezado la pagina Indice
+
+[33mcommit cac56979a9b4741ce883a7e8723d9d70061ca6ff[m
+Author: Aaron <aaron.mn03@gmail.com>
+Date:   Thu Mar 14 10:00:50 2024 +0100
+
+    iconos rss incluidos
+
+[33mcommit f1bfe5e6fdd14bb3ceafdab6e8db395296b53f4a[m
+Author: Aaron <aaron.mn03@gmail.com>
+Date:   Wed Mar 13 18:22:42 2024 +0100
+
+    nav hecho
+
+[33mcommit c0291c171fd7233b03a4bdcd69ea091efcddfd66[m
+Author: Aaron <aaron.mn03@gmail.com>
+Date:   Wed Mar 13 17:32:22 2024 +0100
+
+    Header hecho
+
+[33mcommit e82a16751decbb4322a66eda9eee24b33cd99080[m
+Author: Aaron <aaron.mn03@gmail.com>
+Date:   Wed Mar 13 12:07:59 2024 +0100
+
+    Controller puesto
+
+[33mcommit 81e753d2c4b76c885ac33f111f913faee047ca2b[m
+Author: Juanjo2633 <89455480+Juanjo2633@users.noreply.github.com>
+Date:   Wed Mar 13 11:28:04 2024 +0100
+
+    prueba
+
+[33mcommit 8503ff76ac9aa213dfb9c60a4e8f45b66463db60[m
+Author: Aaron <aaron.mn03@gmail.com>
+Date:   Wed Mar 13 11:20:05 2024 +0100
+
+    Proyecto creado
+
+[33mcommit c4db24446539502f01838f82f0a5a6d2b9edf405[m
+Author: Aaron <aaron.mn03@gmail.com>
+Date:   Wed Mar 6 12:29:11 2024 +0100
+
+    Initial commit
