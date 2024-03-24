@@ -192,4 +192,3 @@ function deleteReserve(){
         window.location.href = '/Reserves/removeReserve/{{reserve.id}}/'
     }
 }
-
