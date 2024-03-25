@@ -1,0 +1,10 @@
+{{>header}}
+<div class = "row" style="background-color: #e74451;">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 p-4 bg-danger">
+    {{#contacts}}
+        <div class="row m-3 p-3 round-border " style="background-color: #a51c28;" onclick="window.location.href = '/Contact/{{id}}/'">
+        Id: {{id}}  Nombre: {{name}}.
+        </div>
+    {{/contacts}}
+{{>footer}}

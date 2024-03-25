@@ -114,6 +114,7 @@ function submitPressRace(event){
     };
 
     console.log(options.body);
+    
 
     fetch(url, options)
     .then(response => {
@@ -124,6 +125,7 @@ function submitPressRace(event){
     })
     .then(data => {
         console.log('Respuesta del servidor:', data);
+        
     })
     .catch(error => {
         console.error('Error:', error);
