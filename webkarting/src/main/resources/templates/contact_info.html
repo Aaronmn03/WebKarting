@@ -1,11 +1,54 @@
 {{>header}}
-<div class = "row" style="background-color: #e74451;">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 p-4 bg-danger">
-        <div class="m-3 p-3 round-border " style="background-color: #a51c28;">
-            <div class="row">Nombre: {{contact.name}}.</div>
-            <div class="row">Correo: {{contact.mail}}.</div>
-            <div class="row">Mensaje: {{contact.message}}.</div>
+<div class="bg">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 p-4">
+            <div class="m-3 p-3 round-border" style="background-color: #282828;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="text-white mb-4" style="font-size: 22px;"> 
+                                <div class="card-header mb-3" style="border-bottom: 1px solid white; font-size: 28px;">Detalles del contacto</div> 
+                                <div class="card-body" style="font-size: 24px;">
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <strong>Nombre:</strong>
+                                        </div>
+                                        <div class="col-md-6">
+                                            {{contact.name}}
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <strong>Correo:</strong>
+                                        </div>
+                                        <div class="col-md-6">
+                                            {{contact.mail}}
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <strong>Mensaje:</strong>
+                                        </div>
+                                        <div class="col-md-6">
+                                            {{contact.message}}
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-center"> 
+                                        <div class="col-md-4 text-center mb-3">
+                                            <button type="button" onclick="window.location.href='editar_contacto.html'" class="btn-editar btn-lg btn-block">Editar</button>
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-4 text-center mb-3">
+                                            <button type="button" class="btn btn-danger btn-lg btn-block">Eliminar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </div>    
 {{>footer}}

@@ -1,0 +1,85 @@
+
+#logo {
+  width: 12%;
+  height: auto;
+}
+.text-white {
+  color: rgb(255, 255, 255);
+}
+.header-seccion {
+  background-color: #ff0000;
+}
+.bg{
+  background-image: url("../images/fondo.jpg");
+  background-size: 100% ;
+  background-repeat: repeat;
+}
+.rates-text h1{
+  color: #FFFFFF;
+  border-bottom: 5px solid #e53939;
+  display: inline-block;
+  padding-bottom:10px;
+  text-transform: none;
+
+}
+
+.rates-text h2{
+  color: #FFFFFF;
+  border-bottom: 2px solid #e53939;
+  display: inline-block;
+  text-transform: none;
+
+}
+
+.rates-text h5{
+  color: #BBBBBB;
+  padding-bottom: 10px;
+  text-transform: none;
+}
+
+.rates-block{
+  background-color: #282828;
+  border-width: 3px;
+  border-radius: 15px;
+}
+
+.smaller-image {
+  max-width: 50%;
+}
+
+
+.table-container {
+  border: 5px solid #FFFFFF;
+  border-radius: 10px;
+}
+
+.table {
+  margin: 0 auto;
+}
+
+.table td {
+  width: 150px;
+  padding: 10px;
+  color:#FFFFFF;
+  font-size: large;
+  text-transform: none;
+}
+
+.table tr:nth-child(odd) {
+  background-color: #e53939;
+}
+
+.table tr:first-child {
+  background-color: red;
+}
+
+.table-container {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+
+
+
+
+

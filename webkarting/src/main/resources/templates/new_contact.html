@@ -1,27 +1,31 @@
 {{>header}}
-<div class = "row" style="background-color: #e74451;">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 p-4 bg-danger">
-      <form  id="fContacts" onsubmit="submitPressContact(event)" style="display: block;">
-        <div class="row">
-            <label for="name">Nombre: </label>
-            <input type="text" id="name">
+<div class="bg">
+  <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8 p-4">
+        <div class="m-3 p-3 bg-custom round-border" style="font-size: 20px;"> <!-- Cambia el tamaño de fuente aquí -->
+            <form id="fContacts" onsubmit="submitPressContact(event)" style="display: block;">
+                <div class="form-group">
+                    <label for="name" class="text-light" style="font-size: 20px;">Nombre:</label> <!-- Cambia el tamaño de fuente aquí -->
+                    <input type="text" class="form-control" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="mail" class="text-light" style="font-size: 20px;">Correo:</label> <!-- Cambia el tamaño de fuente aquí -->
+                    <input type="text" class="form-control" id="mail">
+                </div>
+                <div class="form-group">
+                    <label for="message" class="text-light" style="font-size: 20px;">Mensaje:</label> <!-- Cambia el tamaño de fuente aquí -->
+                    <textarea class="form-control" id="message" rows="4"></textarea>
+                </div>
+                <div class="text-center pt-3">
+                    <button id="ContactFormBtn" type="submit" class="btn btn-light btn-lg" style="border-width: 3px; font-size: 20px;">Enviar</button> <!-- Cambia el tamaño de fuente aquí -->
+                </div>
+            </form>
+            <div class="text-center pt-3">
+                <button onclick="window.location.href = '/Contacts/'" id="ContactsBtn" class="btn btn-light btn-lg" style="border-width: 3px; font-size: 20px;">Ver mensajes</button> <!-- Cambia el tamaño de fuente aquí -->
+            </div>
         </div>
-        <div class="row">
-            <label for="mail">Correo: </label>
-            <input type="text" id="mail">
-        </div>
-        <div class="row">
-            <label for="message">Mensaje: </label>
-            <textarea id="message"></textarea>
-        </div>
-        <div class="text-center pt-3">
-          <button id="ContactFormBtn" type="submit" class="btn btn-outline-light btn-lg" style="border-width: 3px;">Enviar</button>
-        </div>
-      </form>
-      <div class="text-center pt-3">
-        <button onclick="window.location.href = '/Contacts/'" id="ContactsBtn" class="btn btn-outline-light btn-lg" style="border-width: 3px;">Ver mensajes</button>
-      </div>
     </div>
+  </div>
 </div>
 {{>footer}}
