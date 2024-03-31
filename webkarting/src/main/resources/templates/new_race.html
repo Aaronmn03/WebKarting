@@ -1,9 +1,9 @@
 {{>header}}
-<div class = "row" style="background-color: #e74451;">
+<div class = "row bg">
     <div class="col-md-2"></div>
-    <div class="col-md-8 p-4 bg-danger">
+    <div class="col-md-8 p-4">
       <form  id="fReserve" onsubmit="submitPressRace(event)" style="display: block;">
-        <div class="row p-3 round-border" style="background-color: #aa1a26;">
+        <div class="row p-3 round-border" style="background-color: #282828;">
           <div class="col-md-6">
             <label for="numberDrivers" class="text-white">Numero de jugadores:</label>
             <select id="numberDivers" class="form-select form-select ">
@@ -29,7 +29,7 @@
         </div>
         <div id="containerDrivers" class="p-3 row"></div>
         <div class="text-center">
-          <button id="RaceFormBtn" type="submit" class="btn btn-outline-light btn-lg" style="border-width: 3px;">Enviar</button>
+          <button id="RaceFormBtn" type="submit" class="btn-editar btn-lg btn-block" style="border-width: 3px;">Enviar</button>
         </div>
       </form>
     </div>
