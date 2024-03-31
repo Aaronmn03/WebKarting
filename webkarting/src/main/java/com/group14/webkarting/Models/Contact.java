@@ -18,8 +18,8 @@ public class Contact {
     public void setId(Long id) {
         this.id = id;
     }
-    public Mail getMail() {
-        return mail;
+    public String getMail() {
+        return mail.getMail();
     }
     public void setMail(Mail mail) {
         this.mail = mail;
