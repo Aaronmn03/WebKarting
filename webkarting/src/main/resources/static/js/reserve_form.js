@@ -1,6 +1,6 @@
 function generarCamposUsuarios(cantidad) {
     const contenedorUsuarios = document.getElementById('contenedorUsuarios');
-    contenedorUsuarios.innerHTML = ''; // Limpiar el contenedor
+    contenedorUsuarios.innerHTML = ''; // clean
     
     for (let i = 1; i <= cantidad; i++) {
         const usuarioDiv = document.createElement('div');

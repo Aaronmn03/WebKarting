@@ -1,20 +1,30 @@
 {{>header}}
+
 <div class="bg">
 
-<div class = "row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 p-4 ">
-    {{#races}}
-        <div class="row m-3 p-3 round-border " style="background-color: #a51c28;" onclick="window.location.href = '/Race/{{id}}/'">
-        Id: {{id}}  Numero de vueltas: {{numberLaps}}.
-        {{#listDrivers}}
-            <li>Nombre: {{name}} Tiempo total: {{totalTime}}</li>
-        {{/listDrivers}}
-        </div>
-    {{/races}}
-    <button onclick="window.location.href = '/newRace'">Añadir carrera</button>
-    <br> 
+    <div class = "row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 p-4 rates-text"style="text-align: center;">
+            <div class = "container  round-border mt-2 p-4 bg-custom" >
+                <h2 class="mb-4 text-white">RESULTADOS:</h2>
+                <div><img class="img-fluid" style="width: 50%" src="/images/race.png" alt=""></div>
+                <div style="height: 20px;"></div>
+            </div>
+        {{#races}}
+            <div class="row m-3 p-3 round-border " style="background-color: #a51c28;" onclick="window.location.href = '/Race/{{id}}/'">
+            Id: {{id}}  Numero de vueltas: {{numberLaps}}.
+            {{#listDrivers}}
+                <li>Nombre: {{name}} Tiempo total: {{totalTime}}</li>
+            {{/listDrivers}}
+            </div>
+        {{/races}}
+        <br>
+        <button onclick="window.location.href = '/newRace'" class="bg-custom round-border" style="color: white; display: block; margin: 0 auto; font-size: 24px; padding: 10px 20px;">Añadir carrera</button>
 
+        </div>
+        <br> 
+
+    </div>
 </div>
 
 {{>footer}}

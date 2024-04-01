@@ -1,13 +1,19 @@
 {{>header}}
-<div class = "row fondo-seccion">
+<div class = "row bg">
     <div class="col-md-2"></div>
-    <div class="col-md-8 p-4">
+    <div class="col-md-8 p-4 rates-text" style="text-align: center;">
+      <div class = "container  round-border mt-2 p-4 bg-custom" >
+        <h1 class="mb-4 text-white">RESERVA ONLINE:</h1>
+        <img class="img-fluid" src="/images/karting.png" alt="">
+        <div style="height: 20px;"></div>
+      </div>
+      <br>  
       <form  id="fReserve" onsubmit="submitPressReserve(event)" style="display: block;">
-        <div class="row p-3 round-border" style="background-color: #282828;">
-          <label for="numberPlayers" class="text-white">Numero de jugadores:</label>
+        <div class="row p-3 round-border bg-custom">
+          <label for="numberPlayers" class="text-white">Numero de pilotos:</label>
           <div class="col-md-8">
             <select id="numberPlayers" class="form-select form-select ">
-              <option value="0" selected>Seleccionar cantidad de jugadores</option>
+              <option value="0" selected>Seleccionar cantidad de pilotos</option>
               <option value="4">4</option>
               <option value="5">5</option>
               <option value="6">6</option>
