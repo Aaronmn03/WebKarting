@@ -2,15 +2,15 @@
 <div class = "row bg">
     <div class="col-md-2"></div>
     <div class="col-md-8 p-4 rates-text" style="text-align: center;">
-      <div class = "container  round-border mt-2 p-4 bg-custom" >
+      <div class="grey-box mt-2 p-4 " >
         <h1 class="mb-4 text-white">RESERVA ONLINE:</h1>
         <img class="img-fluid" src="/images/karting.png" alt="">
         <div style="height: 20px;"></div>
       </div>
       <br>  
       <form  id="fReserve" onsubmit="submitPressReserve(event)" style="display: block;">
-        <div class="row p-3 round-border bg-custom">
-          <label for="numberPlayers" class="text-white">Numero de pilotos:</label>
+        <div class="row p-3 grey-box">
+          <label for="numberPlayers" class="ligthGrey-text">Número de pilotos:</label>
           <div class="col-md-8">
             <select id="numberPlayers" class="form-select form-select ">
               <option value="0" selected>Seleccionar cantidad de pilotos</option>
@@ -29,12 +29,12 @@
         </div>
         <div id="contenedorUsuarios" class="p-3 row"></div>
         <div class="text-center">
-          <button id="ReserveFormBtn" type="submit" class="btn btn-outline-light btn-lg " style="border-width: 3px; background-color: #282828;">Enviar</button>
+          <button id="ReserveFormBtn" type="submit" class="btn btn-outline-light btn-lg grey-box">Enviar</button>
         </div>
 
       </form>
       </div>
-      <button onclick="window.location.href = '/Reserves'" class="btn btn-outline-light btn-lg" style="border-width: 3px; background-color: #282828">Ver reservas</button>
+      <button onclick="window.location.href = '/Reserves'"type="submit" class="btn btn-outline-light btn-lg grey-box">Ver reservas</button>
     </div>
   <div class="col-md-2"></div>
 {{>footer}}

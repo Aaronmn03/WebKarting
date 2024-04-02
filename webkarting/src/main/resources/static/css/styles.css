@@ -1,7 +1,14 @@
 
 .grey-box{
     background-color: #282828;
-     box-shadow: 12px 12px 12px black;
+    box-shadow: 12px 12px 12px black;
+    border-width: 3px;
+    border-radius: 15px;
+    border: 5px solid #404040;
+}
+
+.ligthGrey-text{
+    color: #BBBBBB;
 }
 .btn-editar {
     background-color: white;
