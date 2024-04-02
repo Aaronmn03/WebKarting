@@ -140,6 +140,10 @@ function Usuario(name,surname,dni,listLaps){
     for(let i = 0; i<  listLaps.length ; i++){
         totalTime = listLaps[i].totalTime;
     }
+    if(!checkDNI(dni)){
+        alert('Por favor ingresa un DNI valido');
+        return;
+    }
 }
 
 function Lap(sector1, sector2, sector3) {
@@ -147,4 +151,23 @@ function Lap(sector1, sector2, sector3) {
     this.timeSect2 = sector2;
     this.timeSect3 = sector3;
     this.totalTime = parseInt(sector1) + parseInt(sector2) + parseInt(sector3);
+}
+
+function checkDNI(dni){
+    var dniRegex = /^[0-9]{8}[a-zA-Z]$/;
+    
+    if (dniRegex.test(dni)) {
+        var numbers = dni.slice(0, -1);
+        var letter = dni.slice(-1).toUpperCase();
+        var index = parseInt(numbers) % 23;
+        var letters = 'TRWAGMYFPDXBNJZSQVHLCKE';
+        
+        if (letter === letters.charAt(index)) {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
 }
