@@ -40,3 +40,46 @@ function submitPressContact(event){
         console.error('Error:', error);
     });
 }
+
+function submitPressEditContact(event,id){
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const mail = document.getElementById('mail').value;
+    const message = document.getElementById('message').value;
+    
+    const data = {
+        "name" : name,
+        "mail" : mail,
+        "message" : message
+    }
+
+    const URL_BACKEND = 'http://127.0.0.1:8080';
+    
+    const url = URL_BACKEND + '/api/Contact/' + id; // URL EndPoint backend
+    console.log(url);
+    const options = {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    };
+
+    console.log(options.body);
+    
+
+    fetch(url, options)
+    .then(response => {
+        if (!response.ok) {     //This check if the server is connected OK
+            throw new Error('Error al enviar los datos al servidor');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Respuesta del servidor:', data);
+        window.location.href = '/Contact/' + id + '/';
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
