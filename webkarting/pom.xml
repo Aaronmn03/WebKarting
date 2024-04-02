@@ -10,9 +10,9 @@
 	</parent>
 	<groupId>group14</groupId>
 	<artifactId>webkarting</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>webkarting</name>
-	<description>Demo project for Spring Boot</description>
+	<description>website for a karting circuit</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

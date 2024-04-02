@@ -16,11 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.group14.webkarting.Models.Contact;
 import com.group14.webkarting.Models.Race;
-import com.group14.webkarting.Models.Reserve;
 import com.group14.webkarting.Services.RaceService;
-import com.group14.webkarting.utils.Mail;
 
 @RestController
 @RequestMapping("/api/Race")

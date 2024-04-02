@@ -8,7 +8,6 @@ import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.stereotype.Service;
 
 import com.group14.webkarting.Models.Contact;
-import com.group14.webkarting.Models.Race;
 
 @Service
 public class ContactService {
