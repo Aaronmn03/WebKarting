@@ -13,7 +13,7 @@ public class RaceController {
     @Autowired
     private RaceService raceService;
 
-    @RequestMapping("/Races/")
+    @RequestMapping("/Races")
     public String getRaces(Model model) {
         model.addAttribute("races", raceService.findAll());
         return "races";
