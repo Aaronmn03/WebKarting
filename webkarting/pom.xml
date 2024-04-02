@@ -8,7 +8,7 @@
 		<version>3.2.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.group14</groupId>
+	<groupId>group14</groupId>
 	<artifactId>webkarting</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>webkarting</name>

@@ -4,12 +4,7 @@ function submitPressContact(event){
     const mail = document.getElementById('mail').value;
     const message = document.getElementById('message').value;
     
-    const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegExp.test(mail)) {
-        alert('Por favor ingresa un mail electrónico valido, ' + mail + ' no es un correo valido');
-        return;
-    } 
-
+    
     const data = {
         "name" : name,
         "mail" : mail,

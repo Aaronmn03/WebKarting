@@ -24,13 +24,14 @@ public class RaceController {
     }
 
     @RequestMapping("/Race/{id}/")
-    public String getReserve(Model model,@PathVariable long id) {
+    public String getRace(Model model,@PathVariable long id) {
         model.addAttribute("race", raceService.findById(id));
         return "race";
     }
 
     @RequestMapping("/Race/{id}/User/{idUser}")
-    public String getReserve(Model model,@PathVariable long id, @PathVariable long idUser) {
+    public String getRaceUser(Model model,@PathVariable long id, @PathVariable long idUser) {
+        idUser--;
         model.addAttribute("driver", raceService.findById(id).getListDrivers().get((int) idUser));
         return "raceUser";
     }

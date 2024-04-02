@@ -6,17 +6,17 @@
         <div class="row p-3 round-border" style="background-color: #aa1a26;">
           <label for="numberPlayers" class="text-white">Numero de jugadores:</label>
           <div class="col-md-8">
-            <select id="numberPlayers" class="form-select form-select" value="{{reserve.numUsers}}">
-              <option value="0" selected>Seleccionar cantidad de jugadores</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
+            <select id="numberPlayers" class="form-select form-select">
+              <option value="0" {{selectedOptions.[0]}}>Seleccionar cantidad de jugadores</option>
+              <option value="4" {{selectedOptions.[4]}}>4</option>
+              <option value="5" {{selectedOptions.[5]}}>5</option>
+              <option value="6" {{selectedOptions.[6]}}>6</option>
+              <option value="7" {{selectedOptions.[7]}}>7</option>
+              <option value="8" {{selectedOptions.[8]}}>8</option>
+              <option value="9" {{selectedOptions.[9]}}>9</option>
+              <option value="10" {{selectedOptions.[10]}}>10</option>
+              <option value="11" {{selectedOptions.[11]}}>11</option>
+              <option value="12" {{selectedOptions.[12]}}>12</option>
             </select>
           </div>
           <input type="datetime-local" id="date" name="date" class="col-md-4" value="{{reserve.date_hour}}">
@@ -28,7 +28,7 @@
 
       </form>
       </div>
-      <button onclick="window.location.href = '/Reserves/'" class="btn btn-outline-light btn-lg" style="border-width: 3px;">Ver reservas</button>
+      <button onclick="window.location.href = '/Reserves'" class="btn btn-outline-light btn-lg" style="border-width: 3px;">Ver reservas</button>
     </div>
   <div class="col-md-2"></div>
 {{>footer}}

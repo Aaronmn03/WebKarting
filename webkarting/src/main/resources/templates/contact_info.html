@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8 p-4">
-            <div class="m-3 p-3 round-border" style="background-color: #282828;">
+            <div class="m-3 p-3 round-border bg-custom">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -36,11 +36,11 @@
                                     </div>
                                     <div class="row justify-content-center"> 
                                         <div class="col-md-4 text-center mb-3">
-                                            <button type="button" onclick="window.location.href='editar_contacto'" class="btn-editar btn-lg btn-block">Editar</button>
+                                            <button onclick = "window.location.href = '/Contact/editContact/{{id}}'"type="button" onclick="window.location.href='editar_contacto'" class="btn-editar btn-lg btn-block">Editar</button>
                                         </div>
                                         <div class="col-md-1"></div>
                                         <div class="col-md-4 text-center mb-3">
-                                            <button type="button" class="btn btn-danger btn-lg btn-block">Eliminar</button>
+                                            <button onclick = "window.location.href = '/Contact/removeContact/{{id}}'" type="button" class="btn btn-danger btn-lg btn-block">Eliminar</button>
                                         </div>
                                     </div>
                                 </div>

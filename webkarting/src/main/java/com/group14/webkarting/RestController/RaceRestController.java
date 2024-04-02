@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -15,9 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.group14.webkarting.Models.Contact;
 import com.group14.webkarting.Models.Race;
 import com.group14.webkarting.Models.Reserve;
 import com.group14.webkarting.Services.RaceService;
+import com.group14.webkarting.utils.Mail;
 
 @RestController
 @RequestMapping("/api/Race")
@@ -61,7 +64,7 @@ public class RaceRestController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Race> replaceReserve(@PathVariable long id, @RequestBody Race newRace) {
+    public ResponseEntity<Race> replaceRace(@PathVariable long id, @RequestBody Race newRace) {
         Race race = races.findById(id);
         if (race != null) {
             newRace.setId(id);
@@ -71,6 +74,22 @@ public class RaceRestController {
             return ResponseEntity.notFound().build();
         }
     }
-    //PATCH
+    @PatchMapping("/{id}")
+    public ResponseEntity<Race> editReserve(@PathVariable long id, @RequestBody Race patchRequest) {
+        Race existingRace = races.findById(id);
+    
+        if (existingRace == null) {
+            return ResponseEntity.notFound().build();
+        }
+        if (patchRequest.getListDrivers() != null) {
+            existingRace.setListDrivers(patchRequest.getListDrivers());
+        }
+        if (patchRequest.getNumberLaps() == 0) {
+            existingRace.setNumberLaps(patchRequest.getNumberLaps());
+        }
+        races.save(existingRace);
+
+        return ResponseEntity.ok(existingRace);
+    }
 
 }

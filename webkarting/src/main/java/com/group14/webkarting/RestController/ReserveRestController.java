@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.group14.webkarting.Models.Race;
 import com.group14.webkarting.Models.Reserve;
 import com.group14.webkarting.Services.ReserveService;
 
@@ -73,6 +75,30 @@ public class ReserveRestController {
             return ResponseEntity.notFound().build();
         }
     }
-    //PATCH
+    
+    @PatchMapping("/{id}")
+    public ResponseEntity<Reserve> editReserve(@PathVariable long id, @RequestBody Reserve patchRequest) {
+        Reserve existingReserve = reserves.findById(id);
+    
+        if (existingReserve == null) {
+            return ResponseEntity.notFound().build();
+        }
+        
+        if (patchRequest.getNumUsers() != 0) {
+            existingReserve.setNumUsers(patchRequest.getNumUsers());
+        }
+        if (patchRequest.getDate_hour() == null) {
+            existingReserve.setDate_hour(patchRequest.getDate_hour());
+        }
+        if (patchRequest.getListUsers() == null) {
+            existingReserve.setListUsers(patchRequest.getListUsers());
+        }
+        if (patchRequest.getRepresentant() == null) {
+            existingReserve.setRepresentant(patchRequest.getRepresentant());
+        }
+        reserves.save(existingReserve);
+
+        return ResponseEntity.ok(existingReserve);
+    }
 
 }

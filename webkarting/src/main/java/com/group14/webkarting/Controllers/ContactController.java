@@ -30,4 +30,16 @@ public class ContactController {
         model.addAttribute("contact", contactService.findById(id));
         return "contact_info";
     }
+
+    @RequestMapping("/Contact/editContact/{id}")
+    public String editReserve(Model model,@PathVariable long id) {
+        model.addAttribute("contact", contactService.findById(id));
+        return "edit_contact";
+    }
+    @RequestMapping("/Contact/removeContact/{id}")
+    public String deleteReserve(Model model,@PathVariable long id) {
+        contactService.deleteById(id);
+        model.addAttribute("contacts", contactService.findAll());
+        return "contacts";
+    }
 }

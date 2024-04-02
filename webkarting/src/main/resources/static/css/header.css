@@ -30,3 +30,14 @@
     background-size: 100% ;
     background-repeat: repeat-y;
 }
+
+.header-links{
+    font-size: 18px; 
+    margin-right: 10px;
+}
+
+.header-sn{
+    font-size: 1em; 
+    margin-right: 10px;
+
+}
