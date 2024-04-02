@@ -1,14 +1,22 @@
 {{>header}}
-<div class = "row bg">
+<div class = "row bg" style="font-size: 1.2em">
     <div class="col-md-2"></div>
     <div class="col-md-8 p-4">
         
-        <div class="row m-3 p-3 grey-box text-white">
-            Id: {{race.id}}  Numero de vueltas: {{race.numberLaps}}.
+        
+        <div class="m-3 p-3 grey-box text-white">
+            <span style="display: inline-block; padding: 10px;">
+                <strong>Id:</strong> {{race.id}}    
+                <strong>Número de vueltas:</strong> {{race.numberLaps}}
+            </span>
+            
+            
             {{#race.listDrivers}}
             <div class="row m-3 p-3 ligthGrey-box" style="width:95%"onclick="window.location.href = '/Race/{{id}}/User/{{-index}}'">
-                Nombre: {{name}} Tiempo total: {{totalTime}}.
-                <!--MidLAP AND BEST LAP We need to calculate this before-->
+                <div style="white-space: nowrap;">
+                    <strong style="font-size: 1.4em; border-bottom: 2px solid red; display: inline-block;">{{-index}} º </strong> <strong>&nbsp;&nbsp;&nbsp;Nombre:</strong> {{name}} <strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tiempo total: </strong>{{totalTime}}.
+                </div>
+                
             </div>
             {{/race.listDrivers}}
             </div>
