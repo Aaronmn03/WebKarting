@@ -1,18 +1,39 @@
 {{>header}}
-<div class = "row" style="background-color: #e74451;">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 p-4 bg-danger">
-        {{driver.surname}},{{driver.name}}   ,{{driver.dni}}
-        Tiempo total: {{driver.totalTime}}   
-        <!--Tiempo medio por vuelta: 
-        Mejor vuelta:    We need to calculate this before-->
-        Vueltas: 
-        {{#driver.listLaps}}
-            Vuelta {{-index}}: 
-            <li>Sector1: {{timeSect1}}</li>
-            <li>Sector2: {{timeSect2}}</li>
-            <li>Sector3: {{timeSect3}}</li>
-            Tiempo de vuelta :{{totalTime}}
-        {{/driver.listLaps}}
+<div class="bg">
+    <br>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 p-4 grey-box text-white" style="font-size: 1.5em">
+            <h2>Información del Conductor</h2>
+            <p><strong>Nombre:</strong> {{driver.surname}}, {{driver.name}}</p>
+            <p><strong>DNI:</strong> {{driver.dni}}</p>
+
+            
+                {{#driver.listLaps}}
+                
+                        <div class="ligthGrey-box" style="padding: 10px">
+                            <strong style="font-size: 1.5em;">Vuelta {{-index}}:</strong> 
+                            <div style="margin-left: 20px; font-size: 1.2em; text-align:center;">
+                                <p>
+                                    <strong>Sector 1:</strong> {{timeSect1}} &nbsp;
+                                    <strong>Sector 2:</strong> {{timeSect2}} &nbsp;
+                                    <strong>Sector 3:</strong> {{timeSect3}} &nbsp;
+                                    <strong>Tiempo de vuelta:</strong> {{totalTime}}
+                                </p>
+                            </div>
+
+                            
+                        </div>
+                        <br>  
+                        
+                
+                {{/driver.listLaps}}
+                <div style="text-align: center;"<p><strong>Tiempo total:</strong> {{driver.totalTime}}</p> </div>
+                        <br>
+            
+        
+        </div>
     </div>
+    <br>
+</div>
 {{>footer}}
