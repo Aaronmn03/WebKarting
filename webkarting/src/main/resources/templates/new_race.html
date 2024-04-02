@@ -4,7 +4,7 @@
       <div class="col-md-2"></div>
       <div class="col-md-8 p-4">
         <form  id="fReserve" onsubmit="submitPressRace(event)" style="display: block;">
-          <div class="row p-3 round-border bg-custom">
+          <div class="row grey-box p-3">
             <div class="col-md-6">
               <label for="numberDrivers" class="text-white">Numero de jugadores:</label>
               <select id="numberDivers" class="form-select form-select ">
@@ -30,10 +30,16 @@
           </div>
           <div id="containerDrivers" class="p-3 row"></div>
           <div class="text-center">
-            <button id="RaceFormBtn" type="submit" class="btn-lg px-5 py-3 bg-custom text-white" style="border-radius: 8px; border-width: 3px;">Enviar</button>
+            <button id="RaceFormBtn" type="submit"  class="btn btn-outline-light btn-lg grey-box">Enviar</button>
           </div>
+        
+  
         </form>
-      </div>
+        </div>
   </div>
+  <div style="text-align: center;">
+    <button onclick="window.location.href = '/Races '" id="ContactsBtn"  class="btn btn-outline-light btn-lg grey-box" style="width: 100%;">Ver resultados</button> 
+  </div>
+  
 </div>
 {{>footer}}

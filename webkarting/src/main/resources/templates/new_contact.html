@@ -3,11 +3,11 @@
   <div class="row">
       <div class="col-md-2"></div>
       <div class="col-md-8 p-4">
-        <div class="grey-box mt-2 p-4  rates-text"style="text-align: center;">
-            <h1 class="mb-4 text-white">¡CONTACTA CON NOSOTROS!</h1>
+        <div class="grey-box mt-2 p-4  rates-text">
+            <div class="mb-4 text-white" style="text-align:center;"><h1>¡CONTACTA CON NOSOTROS!</h1></div>
             <form id="fContacts" onsubmit="submitPressContact(event)" style="display: block;">
                 <div class="form-group">
-                    <label for="name" class="text-light" style="font-size: 20px;">Nombre:</label> 
+                    <label for="name" class="text-light" style="font-size: 20px; tex">Nombre:</label> 
                     <input type="text" class="form-control" id="name">
                 </div>
                 <div class="form-group">
@@ -19,14 +19,14 @@
                     <textarea class="form-control" id="message" rows="4"></textarea>
                 </div>
                 <div class="text-center pt-3">
-                    <button id="ContactFormBtn" type="submit" class="btn btn-light btn-lg" style="border-width: 3px; font-size: 20px;">Enviar</button> <!-- Cambia el tamaño de fuente aquí -->
+                    <button id="ContactFormBtn" type="submit" class="btn btn-outline-light btn-lg grey-box">Enviar</button> 
                 </div>
+            
             </form>
-            <div class="text-center pt-3">
-                <button onclick="window.location.href = '/Contacts/ '" id="ContactsBtn" class="btn btn-light btn-lg" style="border-width: 3px; font-size: 20px;">Ver mensajes</button> <!-- Cambia el tamaño de fuente aquí -->
-            </div>
+
         </div>
     </div>
-  </div>
+    <button onclick="window.location.href = '/Contacts/ '" id="ContactsBtn"  class="btn btn-outline-light btn-lg grey-box">Ver mensajes</button> <!-- Cambia el tamaño de fuente aquí -->
+    </div>
 </div>
 {{>footer}}

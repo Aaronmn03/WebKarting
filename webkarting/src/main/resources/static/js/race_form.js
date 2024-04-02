@@ -7,7 +7,7 @@ function generarCamposDrivers(cantidad) {
         
         driverDiv.className = 'col-md-12';
         driverDiv.innerHTML = `
-            <div class="row round-border mx-2 my-3 p-3" id="Usuario${i}" style="background-color: #282828;">
+            <div class="row grey-box mx-2 my-3 p-3" id="Usuario${i}" >
                 <h3 class="text-white" style="text-align: center;">Corredor ${i}</h3> 
                 <div class="col-md-6" style="text-align: center; font-size: 19px;">  
                     <div class="row py-3"><label for="name${i}" class="text-white">Nombre:</label></div>
@@ -35,7 +35,7 @@ function generateContainerLaps(laps,idUser){
 
         lapDiv.className = 'row';
         lapDiv.innerHTML = `
-        <div class="round-border mx-2 my-1 p-2" id="Lap${i}-${idUser}" style="background-color: #404040;">
+        <div class="ligthGrey-box mx-2 my-1 p-2" id="Lap${i}-${idUser}">
         <h4 class="text-white" style="text-align: center;">Vuelta ${i}</h4> 
             <div class="row">
                 <div class="col-md-4" style="font-size: 14px;">  
