@@ -43,16 +43,22 @@ body{
   padding-bottom:10px;
 }
 
+
 .footer-links ul li a{
   font-size: 18px;
   text-decoration: none;
   color: #BBBBBB;
 
 }
+.footer-links ul {
+  list-style-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"><path fill="%23fff" d="M3.5 0l-.5.5v7l.5.5.5-.5v-7l-.5-.5z"/></svg>'); /* URL de un guion blanco en SVG */
+  padding-left: 20px; /* Espacio para el guion */
+}
+
 
 .copyrigth-text{
   color:#BBBBBB;
   text-align: center;
   font-size: large;
-  padding-top:1%;
+  padding-top:2%;
 }

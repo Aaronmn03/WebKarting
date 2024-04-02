@@ -18,7 +18,22 @@
     <script src="/js/race_form.js"></script> 
     <script src="/js/contact_form.js"></script>
     <link rel="icon" href="/images/logo.png" type="image/x-icon">
-
+    <script>
+      // Obtén el elemento con el id 'date_hour'
+      var dateHourElement = document.getElementById('date_hour');
+  
+      // Obtén el contenido de texto dentro del elemento
+      var dateHourString = dateHourElement.textContent;
+  
+      // Crea un objeto de fecha
+      var date = new Date(dateHourString);
+  
+      // Formatea la fecha y hora según tus preferencias
+      var formattedDateHour = date.toLocaleDateString('es-ES', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) + ' ' + date.toLocaleTimeString('es-ES');
+  
+      // Inserta el texto formateado de nuevo en el elemento
+      dateHourElement.textContent = formattedDateHour;
+    </script>
 </head>
 <body>
 <div style="text-transform: none;">

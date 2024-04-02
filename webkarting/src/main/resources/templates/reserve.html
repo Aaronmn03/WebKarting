@@ -2,17 +2,27 @@
 <div class = "row bg">
     <div class="col-md-2"></div>
     <div class="col-md-8 p-4">
-        <div class="row m-3 p-3 round-border bg-custom text-white">
+        <div class="row m-3 p-3 grey-box text-white">
             <p>Id: {{reserve.id}}</p>
             <p>Horario: {{reserve.date_hour}}</p>
             <p>Representante: {{reserve.representant.name}} {{reserve.representant.surname}}, {{reserve.representant.dni}}, {{reserve.representant.phone}}, {{reserve.representant.mail}}</p>
             {{#reserve.listUsers}}
             <li>{{name}} {{surname}}, {{dni}}</li>
             {{/reserve.listUsers}}
-            <button onclick = "window.location.href = '/Reserves/removeReserve/{{id}}'">Borrar</button>
+
+            <div class="row justify-content-center"> 
+                <div class="col-md-4 text-center mb-3">
+                    <button onclick = "window.location.href = '/Reserves/editReserve/{{id}}'"type="button" onclick="window.location.href='editar_contacto'" class="btn-editar btn-lg btn-block">Editar</button>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-4 text-center mb-3">
+                    <button onclick = "window.location.href = '/Reserves/removeReserve/{{id}}'" type="button" class="btn btn-danger btn-lg btn-block">Eliminar</button>
+                </div>
+            </div>
+
         </div>
     </div>
-    <button onclick = "window.location.href = '/Reserves/editReserve/{{id}}'">Editar</button>
+    
     <div class="col-md-2"></div>
 </div>
 

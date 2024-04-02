@@ -1,13 +1,38 @@
 {{>header}}
-<div class = "row bg">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 p-4 text-white">
-        {{#reserves}}
-        <div class="row m-3 p-3 round-border bg-custom" onclick="window.location.href = '/Reserves/{{id}}'">
-            {{representant.name}} : {{date_hour}}
-        </div>
-        {{/reserves}}
+<div class="bg">
+    <br>
+    <div class = "row">
+
+        <div class="col-md-4"></div>
+            <div class=" col-md-4 grey-box mt-2 p-4 " style="text-align:center" >
+            <img class="img-fluid" src="/images/reserves.png" alt="">
+            <div style="height: 20px;"></div>
+            </div>
+        <div class="col-md-2"></div>
     </div>
-    <div class="col-md-2"></div>
+
+    <div class = "row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 p-4 text-white">
+            <div class="row">
+                <div class="row">
+                    {{#reserves}}
+                    <div class="col-md-6 mb-4">
+                        <div class="grey-box" style="padding: 20px; width: 100%;" onclick="window.location.href = '/Reserves/{{id}}'">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-weight: bold;">{{representant.name}}</span>
+                                <span>{{date_hour}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {{/reserves}}
+
+                </div>
+                
+            </div>
+            
+        </div>
+        <div class="col-md-2"></div>
+    </div>
 </div>
 {{>footer}}
