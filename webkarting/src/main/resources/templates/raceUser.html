@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8 p-4 grey-box text-white">
-            <h2>Información del conductor:</h2>
+            <h3>Información del conductor:</h3>
             <p><strong>Nombre:</strong> {{driver.surname}}, {{driver.name}}</p>
             <p><strong>DNI:</strong> {{driver.dni}}</p>
 
@@ -28,13 +28,14 @@
                         
                 
                 {{/driver.listLaps}}
-                <div style="text-align: center; font-size: 2em"><p><strong>Mejor Vuelta:</strong> {{driver.bestLap.TotalTime}}</p> </div>
+                <div style="text-align: center; font-size: 2em"><p><strong>Mejor vuelta:</strong> {{driver.bestLap.TotalTime}}</p> </div>
                 <div style="text-align: center; font-size: 2em"><p><strong>Tiempo total:</strong> {{driver.totalTime}}</p> </div>
-                        <br>
+                      
             
         
         </div>
     </div>
     <br>
+    <br>    
 </div>
 {{>footer}}

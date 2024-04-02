@@ -1,24 +1,35 @@
 {{>header}}
-<div class = "row bg" style="font-size: 1.2em">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 p-4">
+<div class = "bg" style="font-size: 1.2em">
+    <br>
+    <div class="row">
         
-        
-        <div class="m-3 p-3 grey-box text-white">
-            <span style="display: inline-block; padding: 10px;">
-                <strong>Id:</strong> {{race.id}}    
-                <strong>Número de vueltas:</strong> {{race.numberLaps}}
-            </span>
+        <div class="col-md-2"></div>
+        <br><br><br>
+        <div class="col-md-8 p-4 grey-box text-white">
             
             
-            {{#race.listDrivers}}
-            <div class="row m-3 p-3 ligthGrey-box" style="width:95%"onclick="window.location.href = '/Race/{{id}}/User/{{-index}}'">
-                <div style="white-space: nowrap;">
-                    <strong style="font-size: 1.4em; border-bottom: 2px solid red; display: inline-block;">{{-index}} º </strong> <strong>&nbsp;&nbsp;&nbsp;Nombre:</strong> {{name}} <strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tiempo total: </strong>{{totalTime}}.
-                </div>
+            
+                <span style="display: inline-block; padding: 10px;">
+                    <strong>Id:</strong> {{race.id}}    
+                    <strong>Número de vueltas:</strong> {{race.numberLaps}}
+                </span>
                 
-            </div>
-            {{/race.listDrivers}}
-            </div>
+                
+                {{#race.listDrivers}}
+                <div class="row m-3 p-3 ligthGrey-box" style="width:95%"onclick="window.location.href = '/Race/{{id}}/User/{{-index}}'">
+                    <div style="white-space: nowrap;">
+                        <strong style="font-size: 1.4em; border-bottom: 2px solid red; display: inline-block;">{{-index}} º </strong> 
+                        <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nombre:</strong> {{name}}.
+                        <strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tiempo total: </strong>{{totalTime}}.
+                        <strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vuelta rápida: </strong>{{bestLap.getTotalTime   }}.
+                    </div>
+                    
+                </div>
+                {{/race.listDrivers}}
+                
+        </div>
     </div>
+    <br>
+</div>
+
 {{>footer}}

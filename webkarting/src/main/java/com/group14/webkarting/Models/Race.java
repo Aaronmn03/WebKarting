@@ -43,4 +43,18 @@ public class Race {
     public Lap getBestDriverLap(){
         return listDrivers.get(0).getBestLap();
     }
+
+    public Lap getFastestLap() {
+        Lap fastestLap = listDrivers.get(0).getListLaps().get(0);
+        for (Driver driver : listDrivers) {
+            for (Lap lap : driver.getListLaps()) {
+                if ( lap.getTotalTime() < fastestLap.getTotalTime()) {
+                    fastestLap = lap;
+                }
+            }
+        }
+        
+        return fastestLap;
+    }
+    
 }
