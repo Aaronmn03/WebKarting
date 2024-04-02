@@ -1,5 +1,6 @@
 package com.group14.webkarting.utils;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class Driver extends Person{
@@ -17,6 +18,7 @@ public class Driver extends Person{
         this.bestLap = bestLap;
         this.midLap = midLap;
         this.totalTime = getTotalTime(listLaps); 
+        this.bestLap = getBestLap();
     }
 
 
@@ -40,7 +42,12 @@ public class Driver extends Person{
     }
 
 
-    public Lap getBestLap() {
+    public Lap getBestLap() {      
+        if(bestLap == null){
+            List<Lap> sortedlistLaps = listLaps;  
+            sortedlistLaps.sort(new Lap.LapComparator());
+            this.setBestLap(sortedlistLaps.get(0));
+        }
         return bestLap;
     }
 
@@ -77,5 +84,13 @@ public class Driver extends Person{
         this.totalTime = totalTime;
     }
 
+    public static class DriverComparator implements Comparator<Driver> {
+        @Override
+        public int compare(Driver driver1, Driver driver2) {
+            double timeTotal1 = driver1.getTotalTime();
+            double timeTotal2 = driver2.getTotalTime();
+            return Double.compare(timeTotal1, timeTotal2);
+        }
+    }
     
 }

@@ -1,5 +1,7 @@
 package com.group14.webkarting.utils;
 
+import java.util.Comparator;
+
 public class Lap {
     private float timeSect1;
     private float timeSect2;
@@ -43,5 +45,14 @@ public class Lap {
 
     public void setTotalTime(float totalTime) {
         this.totalTime = totalTime;
+    }
+
+        public static class LapComparator implements Comparator<Lap> {
+        @Override
+        public int compare(Lap lap1, Lap lap2) {
+            double timeTotal1 = lap1.getTotalTime();
+            double timeTotal2 = lap2.getTotalTime();
+            return Double.compare(timeTotal1, timeTotal2);
+        }
     }
 }

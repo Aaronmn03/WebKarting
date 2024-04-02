@@ -3,6 +3,7 @@ package com.group14.webkarting.Models;
 import java.util.List;
 
 import com.group14.webkarting.utils.Driver;
+import com.group14.webkarting.utils.Lap;
 
 public class Race {
     private Long id;
@@ -12,6 +13,7 @@ public class Race {
     public Race(List<Driver> listDrivers,int numberLaps){
         this.listDrivers = listDrivers;
         this.numberLaps = numberLaps;
+        listDrivers.sort(new Driver.DriverComparator());
     }
 
     public Long getId() {
@@ -38,4 +40,7 @@ public class Race {
         this.numberLaps = numberLaps;
     }
     
+    public Lap getBestDriverLap(){
+        return listDrivers.get(0).getBestLap();
+    }
 }
