@@ -5,7 +5,8 @@
         <div class="row m-3 p-3 grey-box text-white">
             <p>Id: {{reserve.id}}</p>
             <p>Horario: {{reserve.date_hour}}</p>
-            <p>Representante: {{reserve.representant.name}} {{reserve.representant.surname}}, {{reserve.representant.dni}}, {{reserve.representant.phone}}, {{reserve.representant.mail}}</p>
+            <p>Representante: {{reserve.representant.name}} {{reserve.representant.surname}}, {{reserve.representant.dni}}, {{reserve.representant.phone}}, {{reserve.representant.mail.mail}}</p>
+            
             {{#reserve.listUsers}}
             <li>{{name}} {{surname}}, {{dni}}</li>
             {{/reserve.listUsers}}

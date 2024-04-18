@@ -2,11 +2,24 @@ package com.group14.webkarting.utils;
 
 import java.util.Comparator;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Lap {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id_lap;
     private float timeSect1;
     private float timeSect2;
     private float timeSect3;
     private float totalTime;
+
+    public Lap(){
+
+    }
 
     public Lap (float t1, float t2, float t3){
         this.timeSect1 = t1;
@@ -55,4 +68,13 @@ public class Lap {
             return Double.compare(timeTotal1, timeTotal2);
         }
     }
+
+        public Long getId_lap() {
+            return id_lap;
+        }
+
+        public void setId_lap(Long id_lap) {
+            this.id_lap = id_lap;
+        }
+    
 }
