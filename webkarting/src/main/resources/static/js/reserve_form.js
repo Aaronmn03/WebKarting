@@ -86,10 +86,11 @@ function submitPressReserve(event){
     const numPlayers = nPlayersInput.value;
     const dateValue = document.getElementById('date').value;
 
-    if(dateValue === ""){
-        alert('Por favor ingresa una fecha valida');
+    if (dateValue === "" || new Date(dateValue) < new Date()) {
+        alert('Por favor ingresa una fecha válida');
         return;
     }
+  
 
     const representant = getValues(1);
     const valuesUsers = getValuesUsers(numPlayers);
@@ -147,6 +148,7 @@ function submitPressReserve(event){
         if (!response.ok) {     //This check if the server is connected OK
             throw new Error('Error al enviar los datos al servidor');
         }
+        alert("Reserva enviada correctamente");
         return response.json();
     })
     .then(data => {
@@ -192,3 +194,4 @@ function deleteReserve(){
         window.location.href = '/Reserves/removeReserve/{{reserve.id}}/'
     }
 }
+

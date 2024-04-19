@@ -121,6 +121,7 @@ function submitPressRace(event){
         if (!response.ok) {     //This check if the server is connected OK
             throw new Error('Error al enviar los datos al servidor');
         }
+        alert("Carrera subida correctamente");
         return response.json();
     })
     .then(data => {
