@@ -5,10 +5,25 @@ import java.util.List;
 import com.group14.webkarting.utils.Driver;
 import com.group14.webkarting.utils.Lap;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
+@Entity
 public class Race {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @OneToMany
     private List<Driver> listDrivers;
     private int numberLaps;
+
+    public Race(){
+        
+    }
 
     public Race(List<Driver> listDrivers,int numberLaps){
         this.listDrivers = listDrivers;

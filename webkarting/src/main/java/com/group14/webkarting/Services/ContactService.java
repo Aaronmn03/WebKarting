@@ -43,16 +43,6 @@ public class ContactService {
     }
 
     public void deleteById(long id) {
-        Optional<Contact> contactOptional = contacts.findById(id);
-        if (contactOptional.isPresent()) {
-            Contact contact = contactOptional.get();
-            Mail mail = contact.getMail();
-
-            contacts.delete(contact);
-            List<Contact> contactsUsingMail = contacts.findByMail(mail);
-            if (contactsUsingMail.isEmpty()) {
-                mails.delete(mail);
-            }
-        }
+        contacts.deleteById(id);
     }
 }

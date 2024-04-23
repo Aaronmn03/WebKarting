@@ -3,16 +3,37 @@ package com.group14.webkarting.utils;
 import java.util.Comparator;
 import java.util.List;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+
+@Entity
 public class Driver extends Person{
+    @OneToMany
     private List<Lap> listLaps;
+    @OneToOne
+    @JoinColumn(name = "id_BestLap")
     private Lap bestLap;
-    private Lap midLap;
+    private float midLap;
     private int nKart;
     private float totalTime;
 
+    public Driver(){
+        super();
+    }
 
-    public Driver(DNI dni, String name, String surname, List<Lap> listLaps,Lap bestLap, Lap midLap ,int nKart) {
+    public Driver(DNI dni, String name, String surname, List<Lap> listLaps,int nKart) {
         super(dni, name, surname);
+        this.listLaps = listLaps;
+        this.nKart = nKart;
+        this.midLap = 0;
+        this.totalTime = getTotalTime(listLaps); 
+        this.bestLap = getBestLap();
+    }
+
+    public Driver(Person person, List<Lap> listLaps,Lap bestLap, float midLap ,int nKart){
+        super(person);
         this.listLaps = listLaps;
         this.nKart = nKart;
         this.bestLap = bestLap;
@@ -57,12 +78,12 @@ public class Driver extends Person{
     }
 
 
-    public Lap getMidLap() {
+    public float getMidLap() {
         return midLap;
     }
 
 
-    public void setMidLap(Lap midLap) {
+    public void setMidLap(float midLap) {
         this.midLap = midLap;
     }
     

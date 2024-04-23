@@ -1,8 +1,19 @@
 package com.group14.webkarting.utils;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class DNI {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long dni_id;
     private String number;
     private char letter;
+
+    public DNI(){}
 
     public DNI(String dni){
         String num = dni.substring(0,dni.length() - 1);
@@ -34,5 +45,13 @@ public class DNI {
 
     public String toString(){
         return number + letter;
+    }
+
+    public Long getDni_id() {
+        return dni_id;
+    }
+
+    public void setDni_id(Long dni_id) {
+        this.dni_id = dni_id;
     }
 }

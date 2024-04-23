@@ -30,6 +30,7 @@ function submitPressContact(event){
         if (!response.ok) {     //This check if the server is connected OK
             throw new Error('Error al enviar los datos al servidor');
         }
+        alert("Mensaje enviado correctamente");
         return response.json();
     })
     .then(data => {

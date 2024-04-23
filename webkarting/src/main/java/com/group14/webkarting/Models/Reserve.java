@@ -6,11 +6,26 @@ import java.util.List;
 import com.group14.webkarting.utils.Person;
 import com.group14.webkarting.utils.Representant;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+
+@Entity
 public class Reserve {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private int numUsers;
     private LocalDateTime date_hour;
+    @ManyToOne
+    @JoinColumn(name = "person_id") 
     private Representant representant;
+    @ManyToMany
     private List<Person> listUsers;
     public Reserve(){}
 
