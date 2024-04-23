@@ -1,8 +1,6 @@
 package com.group14.webkarting.Services;
 
 import java.util.Collection;
-import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +8,6 @@ import org.springframework.stereotype.Service;
 import com.group14.webkarting.Models.Contact;
 import com.group14.webkarting.Repositories.ContactRepository;
 import com.group14.webkarting.Repositories.MailRepository;
-import com.group14.webkarting.utils.Mail;
 
 @Service
 public class ContactService {

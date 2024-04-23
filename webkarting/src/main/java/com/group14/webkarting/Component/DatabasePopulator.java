@@ -109,7 +109,6 @@ public class DatabasePopulator {
 
         DNIRepository.saveAll(Arrays.asList(dni1,dni2,dni3,dni4,dni5));
         
-        Person person1 = new Person(dni1, "Pedro", "Gonzalez");
         Person person2 = new Person(dni2, "Maria", "Pérez");
         Person person3 = new Person(dni3, "Jose", "García");
         Person person4 = new Person(dni4, "Javier", "Martínez");
