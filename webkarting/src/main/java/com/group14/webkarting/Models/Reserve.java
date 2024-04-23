@@ -11,6 +11,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 
@@ -24,7 +25,7 @@ public class Reserve {
     @ManyToOne
     @JoinColumn(name = "person_id") 
     private Representant representant;
-    @OneToMany
+    @ManyToMany
     private List<Person> listUsers;
     public Reserve(){}
 

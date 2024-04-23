@@ -29,7 +29,7 @@ function generarCamposUsuarios(cantidad) {
             usuarioDiv.className = 'col-md-6';
             usuarioDiv.innerHTML = `
             <div class="row grey-box round-border mx-2 my-3 p-3" id="Usuario ${i}" >
-                <h3 class="text-white" style="text-align: center;">Usuario${i}</h3> 
+                <h3 class="text-white" style="text-align: center;">Usuario ${i}</h3> 
                 <div class="col-md-6" style="text-align: center; font-size: 19px;">  
                     <div class="row py-3"><label for="name${i}" class="text-white">Nombre:</label></div>
                     <div class="row py-3"><label for="surname${i}" class="text-white">Apellidos:</label></div>
@@ -87,7 +87,7 @@ function submitPressReserve(event){
     const dateValue = document.getElementById('date').value;
 
     if (dateValue === "" || new Date(dateValue) < new Date()) {
-        alert('Por favor ingresa una fecha válida');
+        alert('Por favor ingresa una fecha valida');
         return;
     }
   

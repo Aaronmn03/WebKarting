@@ -7,4 +7,5 @@ import com.group14.webkarting.utils.Phone;
 
 public interface PhoneRepository extends JpaRepository<Phone,Long>{  
     boolean existsByPhone(int phone);
+    Phone findByPhone(int phone);
 }

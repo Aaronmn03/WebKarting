@@ -7,4 +7,5 @@ import com.group14.webkarting.utils.DNI;
 
 public interface DNIRepository extends JpaRepository<DNI,Long>{  
     boolean existsByNumber(String number);
+    DNI findByNumber(String number);
 }
